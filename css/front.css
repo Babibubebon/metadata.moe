@@ -15,7 +15,7 @@ body {
 .masthead {
     position: relative;
     overflow: hidden;
-    padding-top: calc(7rem + 72px);
+    padding-top: 7rem;
     padding-bottom: 7rem;
 }
 
@@ -29,12 +29,21 @@ body {
     font-family: 'Mina', sans-serif;
 }
 
+.masthead .logo {
+    width: 95px;
+    height: 95px;
+}
+
 @media (min-width: 992px) {
     .masthead {
-        padding-top: calc(10rem + 55px);
+        padding-top: 10rem;
         padding-bottom: 10rem;
     }
     .masthead .masthead-content .masthead-heading {
         font-size: 6rem;
+    }
+    .masthead .logo {
+        width: 150px;
+        height: 150px;
     }
 }
