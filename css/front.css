@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Mina:700');
+
+html {
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(0deg, #666, #000);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+.masthead {
+    position: relative;
+    overflow: hidden;
+    padding-top: calc(7rem + 72px);
+    padding-bottom: 7rem;
+}
+
+.masthead .masthead-content {
+    z-index: 1;
+    position: relative;
+}
+
+.masthead .masthead-content .masthead-heading {
+    font-size: 4rem;
+    font-family: 'Mina', sans-serif;
+}
+
+@media (min-width: 992px) {
+    .masthead {
+        padding-top: calc(10rem + 55px);
+        padding-bottom: 10rem;
+    }
+    .masthead .masthead-content .masthead-heading {
+        font-size: 6rem;
+    }
+}
