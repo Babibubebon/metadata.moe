@@ -5,18 +5,19 @@ html {
 }
 
 body {
-    background: linear-gradient(0deg, #666, #000);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: scroll;
-    background-size: cover;
+    font-family: 'Mina', sans-serif;
 }
 
 .masthead {
     position: relative;
     overflow: hidden;
-    padding-top: 7rem;
-    padding-bottom: 7rem;
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+    background: linear-gradient(0deg, #888, #000);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: scroll;
+    background-size: cover;
 }
 
 .masthead .masthead-content {
@@ -26,7 +27,6 @@ body {
 
 .masthead .masthead-content .masthead-heading {
     font-size: 4rem;
-    font-family: 'Mina', sans-serif;
 }
 
 .masthead .logo {
@@ -36,8 +36,8 @@ body {
 
 @media (min-width: 992px) {
     .masthead {
-        padding-top: 10rem;
-        padding-bottom: 10rem;
+        padding-top: 9rem;
+        padding-bottom: 4rem;
     }
     .masthead .masthead-content .masthead-heading {
         font-size: 6rem;
