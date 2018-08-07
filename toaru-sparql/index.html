@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, hrink-to-fit=no">
+    <meta name="author" content="Tenkuro">
+    <meta name="description" content="『とあるシリーズ』好きのためのSPARQLエンドポイント">
+    <title>とあるSPARQL</title>
+
+    <link href='https://cdn.jsdelivr.net/npm/yasgui@2.7.27/dist/yasgui.min.css' rel='stylesheet' type='text/css' />
+  </head>
+
+  <body>
+    <h1>とあるSPARQL</h1>
+    <p>
+      2018-08-07 更新<br>
+      要望、不具合等の連絡は、てんくろ(<a href="https://twitter.com/etoile_014">@etoile_014<a>)にお願いします。
+    </p>
+  	<div id='yasgui'></div>
+    <script src='https://cdn.jsdelivr.net/npm/yasgui@2.7.27/dist/yasgui.min.js'></script>
+    <script type="text/javascript">
+        var TOARU = '/sparql/toaru/query';
+      var yasgui = YASGUI(document.getElementById("yasgui"), {
+          endpoint: TOARU,
+          yasqe: {
+            sparql: {endpoint: TOARU}
+          }
+      });
+    </script>
+
+    <script type="application/ld+json">
+      {
+          "@context": "http://schema.org",
+          "@type": "WebPage",
+          "name": "toaru.sparql",
+          "description": [
+              {"@value": "『とあるシリーズ』好きのためのSPARQLエンドポイント", "@language": "ja"},
+          ],
+          "author": {
+              "@id": "https://twitter.com/etoile_014"
+          }
+      }
+    </script>
+  </body>
+</html>
