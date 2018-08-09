@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +8,15 @@
     <meta name="description" content="『とあるシリーズ』好きのためのSPARQLエンドポイント">
     <title>とあるSPARQL</title>
 
-    <link href='https://cdn.jsdelivr.net/npm/yasgui@2.7.27/dist/yasgui.min.css' rel='stylesheet' type='text/css' />
+    <link href='https://cdn.jsdelivr.net/npm/yasgui@2.7.27/dist/yasgui.min.css' rel='stylesheet' type='text/css'>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-7878096-15"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-7878096-15');
+    </script>
   </head>
 
   <body>
@@ -29,6 +36,15 @@
           }
       });
     </script>
+
+    <section id="data-model">
+      <h2>データモデル</h2>
+      <ul>
+        <li><a href="https://docs.google.com/spreadsheets/d/1e_v9TqJtW3LRtv64wKEk2ClUe6t1foelQtLVUXNUuMQ/edit?usp=sharing">クラスの定義</a></li>
+        <li><a href="https://docs.google.com/spreadsheets/d/136mw6chqs_IWM2visEDseONrHM6sKT4jpPcCfirspaA/edit?usp=sharing">属性の定義</a></li>
+        <li><a href="https://docs.google.com/spreadsheets/d/1nk2ykTVbZdHgMaWX7E6P3ginm9FChFlXmzRjFniyD0g/edit?usp=sharing">関連の定義</a></li>
+      </ul>
+    </section>
 
     <script type="application/ld+json">
       {
