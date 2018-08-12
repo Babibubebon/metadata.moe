@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
+  <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, hrink-to-fit=no">
-    <meta name="author" content="Tenkuro">
-    <meta name="description" content="『とあるシリーズ』好きのためのSPARQLエンドポイント">
+    
     <title>とあるSPARQL</title>
+    <meta name="author" content="Tenkuro">
+    <meta name="description" content="『とある』好きの『とある』好きによる『とある』好きのためのSPARQLエンドポイント">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="とあるSPARQL | metadata.moe | tenkuro">
+    <meta name="twitter:description" content="『とある』好きの『とある』好きによる『とある』好きのためのSPARQLエンドポイント">
+    <meta name="twitter:image" content="./img/toaru-sparql-card.png">
+
+    <!-- OGP  -->
+    <meta property="og:title" content="とあるSPARQL">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="『とある』好きの『とある』好きによる『とある』好きのためのSPARQLエンドポイント">
+    <meta property="og:url" content="https://metadata.moe/toaru-sparql/">
+    <meta property="og:image" content="./img/toaru-sparql-card.png">
 
     <link href='https://cdn.jsdelivr.net/npm/yasgui@2.7.27/dist/yasgui.min.css' rel='stylesheet' type='text/css'>
 
@@ -22,7 +36,7 @@
   <body>
     <h1>とあるSPARQL</h1>
     <p>
-      2018-08-07 更新<br>
+      2018-08-12 更新<br>
       要望、不具合等の連絡は、てんくろ(<a href="https://twitter.com/etoile_014">@etoile_014<a>)にお願いします。
     </p>
   	<div id='yasgui'></div>
@@ -52,12 +66,20 @@
           "@type": "WebPage",
           "name": "toaru.sparql",
           "description": [
-              {"@value": "『とあるシリーズ』好きのためのSPARQLエンドポイント", "@language": "ja"},
+              {"@value": "『とある』好きの『とある』好きによる『とある』好きのためのSPARQLエンドポイント", "@language": "ja"},
           ],
           "author": {
               "@id": "https://twitter.com/etoile_014"
           }
       }
     </script>
+    <div id="changeLog">
+      <h2>更新履歴</h2>
+      <ul>
+	      <li><time>2018年8月12日</time>更新履歴追加</li>
+	      <li><time>2018年8月10日</time>FANDOMデータ追加</li>
+        <li><time>2018年8月7日</time>とあるSPARQL公開</li>
+      </ul>
+    </div>
   </body>
 </html>
