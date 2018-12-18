@@ -34,6 +34,12 @@ body {
     height: 95px;
 }
 
+@media (max-width: 992px) {
+    .masthead .masthead-content .masthead-heading {
+        font-size: 3.5rem;
+    }
+}
+
 @media (min-width: 992px) {
     .masthead {
         padding-top: 9rem;
