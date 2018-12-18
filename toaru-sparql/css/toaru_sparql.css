@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css?family=Mina:700');
+
+html {
+    height: 100%;
+    scroll-behavior:smooth;
+}
+
+body {
+    font-family: 'Mina', sans-serif;
+    padding: 0;
+    margin: 0 auto;
+}
+
+div.logo{
+  padding: 4.5em 0;
+  box-shadow: 0px 1px 0px #dedede;
+}
+
+div#yasgui{
+  margin: 1em 0;
+}
+
+.logo h1, .logo p {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+}
+
+section{
+  padding: 1em 0;
+}
+
+div.main {
+  margin: 0 10%;
+}
+
+div.main p{
+  text-indent: 1em;
+}
+
+div.main a{
+  color: #000;
+}
+
+div.image{
+  padding: 50px;
+  text-align: center;
+}
+
+div.image img{
+  width: 80%;
+  height: auto;
+}
+
+div.head_description {
+  padding: 5% 10%
+}
+
+div.embed_twitter {
+  display: block;
+  padding: 5% 0;
+  margin: 0 auto;
+  width: 60%;
+}
+
+.sample_code {
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.sample_code pre{
+  background-color: rgb(243,243,243);
+  white-space: pre-wrap ;
+}
+
+
+p.head_description{
+  text-align: center;
+}
+
+.nav {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  background: #FFF;
+  padding: 5px 0;
+  box-shadow: 0px 1px 0px #dedede;
+}
+
+.nav ul {
+  list-style: none;
+  text-align: center;
+}
+.nav ul li {
+  display: inline-block;
+}
+.nav ul li a {
+  display: block;
+  padding: 0px;
+  text-decoration: none;
+  color: #AAA;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 20px;
+}
+.nav ul li a,
+.nav ul li a:after,
+.nav ul li a:before {
+  transition: all .3s;
+}
+.nav ul li a:hover {
+  color: #555;
+}
+
+.nav ul li a{
+  position: relative;
+}
+
+.nav ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #333;
+  height: 1px;
+}
+.nav ul li a:hover:after {
+  width: 100%;
+}
+
+#page_top{
+  position: fixed;
+  right: 0.5em;
+  bottom: 0.5em;
+  font-size:3em;
+}
+
+#page_top a {
+  color: #333;
+  opacity: 0.2;
+}
+
+#page_top a:hover{
+  color: #333;
+  opacity: 1.0;  
+}
+
+#page_top a{
+  position: relative;
+  display: block;
+  text-decoration: none;
+}
+
+
+footer {
+  font-family: sans-serif;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  color: #FFF;
+  background-color: #333;
+  margin-top: 30px;
+  padding: 0;
+}
+
+footer p{
+  font-size: 10px;
+  padding: 10px 0
+}
+
+footer a{
+  color: #FFF;
+}
