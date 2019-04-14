@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-7878096-15"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-7878096-15');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="DBpedia JapaneseのSPARQLエンドポイントのミラー">
+
+    <title>DBpedia Japanese mirror - Metadata.Moe</title>
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/front.css" rel="stylesheet">
+    <link rel="icon" href="/favicon.ico">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
+        integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+        crossorigin="anonymous"></script>
+    <link href="//cdn.jsdelivr.net/npm/yasgui@2.7.29/dist/yasgui.min.css" rel="stylesheet" type="text/css">
+    <script src="//cdn.jsdelivr.net/npm/yasgui@2.7.29/dist/yasgui.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">metadata.moe</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://babibubebo.org/lab/">Lab</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://babibubebo.org/lab/books/">Publications</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+
+        <div class="card">
+            <div class="card-body">
+                <h1 class="h3 card-title">DBpedia Japanese mirror with Fuseki</h1>
+                <a href="http://ja.dbpedia.org/">DBpedia Japanese</a>のSPARQLエンドポイントを<a
+                    href="https://jena.apache.org/documentation/fuseki2/">Apache Jena Fuseki</a>を使って提供しています。
+                提供しているデータセットは<a href="http://ja.dbpedia.org/dumps/20160407/">2016-04-07版</a>です。
+            </div>
+        </div>
+
+        <div id="yasgui"></div>
+
+    </div>
+
+    <script type="text/javascript">
+        YASGUI.defaults.catalogueEndpoints = [];
+        var yasgui = YASGUI(document.getElementById("yasgui"), {
+            endpoint: 'http://sparql.metadata.moe/dbpedia-ja/query',
+        });
+    </script>
+</body>
+
+</html>
