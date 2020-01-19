@@ -50,16 +50,23 @@
 
     <div class="container-fluid">
 
-        <div class="jumbotron">
+        <div class="jumbotron pb-3">
             <h1 class="h3">メディア芸術データベース LOD</h1>
             <hr>
             <p>
                 <a href="https://mediaarts-db.bunka.go.jp/">メディア芸術データベース (ベータ版)</a>が試験的に公開している<a href="https://mediaarts-db.bunka.go.jp/about#anc02">Web API</a>から取得したデータを変換して作成したデータセットです。<br>
-                変換スクリプトなどは<a href="https://github.com/Babibubebon/MADB-LOD">GitHub</a>で公開しています。
+            </p>
+            <p>
+                <ul>
+                    <li>変換スクリプト: <a href="https://github.com/Babibubebon/MADB-LOD"><i class="fab fa-github"></i>Babibubebon/MADB-LOD</a></li>
+                    <li><a href="dumps/">データダンプのダウンロード</a></li>
             </p>
         </div>
 
-        <div id="yasgui"></div>
+        <section>
+            <h2>Query with SPARQL</h2>
+            <div id="yasgui"></div>
+        </section>
 
         <div class="card mt-4">
             <div class="card-body">
