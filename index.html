@@ -59,71 +59,78 @@
             <div class="container">
                 <img src="img/metadata.svg" class="logo">
                 <h1 class="masthead-heading mb-0">metadata.moe</h1>
-                <a href="#" class="btn btn-success btn-lg mt-5 p-3">メタデータ萌え</a>
+                <a class="btn btn-success btn-lg mt-5 p-3">メタデータ萌え</a>
             </div>
         </div>
     </div>
 
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-5 order-0">
-                <div class="row pt-5">
-                    <div class="col-6 text-center">
-                        <i class="fas fa-tv w-75 h-75"></i>
+    <section class="mt-4">
+        <div class="container">
+            <h2 class="h1 text-center">Datasets</h2>
+
+            <div class="row align-items-center">
+                <div class="col-md-5 order-0">
+                    <div class="row pt-5">
+                        <div class="col-6 text-center">
+                            <i class="fas fa-tv w-75 h-75"></i>
+                        </div>
+                        <div class="col-6 text-center">
+                            <i class="fas fa-film w-75 h-75"></i>
+                        </div>
                     </div>
-                    <div class="col-6 text-center">
-                        <i class="fas fa-film w-75 h-75"></i>
+                </div>
+                <div class="col-md-7">
+                    <div class="text-center pt-md-5">
+                        <h2><a href="https://animedb.moe">Animumemo</a></h2>
+                        <p class="lead">
+                            アニメ作品のデータベース
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-7">
-                <div class="text-center pt-md-5">
-                    <h2><a href="https://animedb.moe">Animumemo</a></h2>
-                    <p class="lead">
-                        アニメ作品のデータベース
+
+            <hr>
+
+            <div class="row align-items-center">
+                <div class="col-md-5 order-0">
+                    <div class="pr-3 pl-3">
+                        <img src="/img/toaru-sparql.svg">
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="text-center">
+                        <h2><a href="/toaru-sparql/">とあるSPARQL</a></h2>
+                        <p class="lead">
+                            とあるシリーズのデータセットとSPARQLエンドポイント
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row my-4">
+                <div>
+                    <h3><a href="/madb-lod/">メディア芸術データベース LOD</a></h3>
+                    <p>
+                        <a href="https://mediaarts-db.bunka.go.jp/about#anc02">メディア芸術データベース Web API</a>から取得したデータをRDFに変換したデータセット・SPARQLエンドポイントを提供しています。
                     </p>
                 </div>
             </div>
-        </div>
 
-        <div class="row align-items-center">
-            <div class="col-md-5 order-0">
-                <div class="pr-3 pl-3">
-                    <img src="/img/toaru-sparql.svg">
-                </div>
-            </div>
-            <div class="col-md-7">
-                <div class="text-center">
-                    <h2><a href="/toaru-sparql/">とあるSPARQL</a></h2>
-                    <p class="lead">
-                        とあるシリーズのデータセットとSPARQLエンドポイント
+            <hr>
+
+            <div class="row my-4">
+                <div>
+                    <h3><a href="/dbpedia-ja/">DBpedia Japanese mirror</a></h3>
+                    <p>
+                        DBpedia JapaneseのSPARQLエンドポイント(Apache Jena Fuseki)を提供しています。
                     </p>
                 </div>
             </div>
+
         </div>
-
-        <hr>
-
-        <div class="row my-4">
-            <div>
-                <h3><a href="/madb-lod/">メディア芸術データベース LOD</a></h3>
-                <p>
-                    <a href="https://mediaarts-db.bunka.go.jp/about#anc02">メディア芸術データベース Web API</a>から取得したデータをRDFに変換したデータセット・SPARQLエンドポイントを提供しています。
-                </p>
-            </div>
-        </div>
-
-        <hr>
-
-        <div class="row my-4">
-            <div>
-                <h3><a href="/dbpedia-ja/">DBpedia Japanese mirror</a></h3>
-                <p>
-                    DBpedia JapaneseのSPARQLエンドポイント(Apache Jena Fuseki)を提供しています。
-                </p>
-            </div>
-        </div>
-    </div>
+    </section>
 
     <script type="application/ld+json">
 {
