@@ -33,7 +33,7 @@
   dcterms:license <https://creativecommons.org/licenses/by/4.0/>, <https://mediaarts-db.bunka.go.jp/user_terms> ;
   foaf:homepage <https://metadata.moe/madb-lod/> ;
   void:sparqlEndpoint <https://metadata.moe/sparql/madb/query> ;
-  void:triples 17623097 .
+  void:triples 19341483 .
 
 :BLab a foaf:Organization ;
   dcterms:title "Babibubebo Laboratory"@en, "ばびぶべぼ研究室"@ja ;

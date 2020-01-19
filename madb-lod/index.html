@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-7878096-15"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-7878096-15');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="メディア芸術データベース LOD">
+
+    <title>メディア芸術データベース LOD - Metadata.Moe</title>
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/front.css" rel="stylesheet">
+    <link rel="icon" href="/favicon.ico">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
+        integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+        crossorigin="anonymous"></script>
+    <link href="//cdn.jsdelivr.net/npm/yasgui@2.7.29/dist/yasgui.min.css" rel="stylesheet" type="text/css">
+    <script src="//cdn.jsdelivr.net/npm/yasgui@2.7.29/dist/yasgui.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">metadata.moe</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://babibubebo.org/lab/">Lab</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://babibubebo.org/lab/books/">Publications</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+
+        <div class="jumbotron">
+            <h1 class="h3">メディア芸術データベース LOD</h1>
+            <hr>
+            <p>
+                <a href="https://mediaarts-db.bunka.go.jp/">メディア芸術データベース (ベータ版)</a>が試験的に公開している<a href="https://mediaarts-db.bunka.go.jp/about#anc02">Web API</a>から取得したデータを変換して作成したデータセットです。<br>
+                変換スクリプトなどは<a href="https://github.com/Babibubebon/MADB-LOD">GitHub</a>で公開しています。
+            </p>
+        </div>
+
+        <div id="yasgui"></div>
+
+        <div class="card mt-4">
+            <div class="card-body">
+                <h5 class="card-title">ご利用にあたって</h5>
+                <ul>
+                    <li>本データセットは、<a href="https://mediaarts-db.bunka.go.jp/">文化庁「メディア芸術データベース（ベータ版）」</a>を加工して作成したものです。</li>
+                    <li><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="クリエイティブ・コモンズ・ライセンス" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br>本データセットは、<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">クリエイティブ・コモンズ 表示 4.0 国際 ライセンス</a>の下に提供されています。
+                    <a href="https://mediaarts-db.bunka.go.jp/user_terms">メディア芸術データベース 利用規約</a>も併せてお読みください。</li>
+                    <li>本データセットは、個人が独自に提供しているものですので、文化庁にお問い合わせされないようご注意ください。連絡先は<a href="https://babibubebo.org/about/contact/">こちら</a>か、内容に応じて<a href="https://github.com/Babibubebon/MADB-LOD/issues">GitHubのissue</a>にお願いします。</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        YASGUI.defaults.catalogueEndpoints = [];
+        var yasgui = YASGUI(document.getElementById("yasgui"), {
+            persistencyPrefix: 'dbpedia-ja-mirror',
+            endpoint: 'https://metadata.moe/sparql/madb/query',
+            api: {
+                urlShortener: "/sparql-shorten"
+            }
+        });
+    </script>
+</body>
+
+</html>
