@@ -17,14 +17,21 @@
     <title>メディア芸術データベース LOD - Metadata.Moe</title>
 
     <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/front.css" rel="stylesheet">
     <link rel="icon" href="/favicon.ico">
 
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
         integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
         crossorigin="anonymous"></script>
-    <link href="//cdn.jsdelivr.net/npm/yasgui@2.7.29/dist/yasgui.min.css" rel="stylesheet" type="text/css">
-    <script src="//cdn.jsdelivr.net/npm/yasgui@2.7.29/dist/yasgui.min.js"></script>
+    <link href="https://unpkg.com/@triply/yasgui@4.0.96/build/yasgui.min.css" rel="stylesheet" type="text/css">
+    <script src="https://unpkg.com/@triply/yasgui@4.0.96/build/yasgui.min.js"></script>
+    <style>
+    .yasgui .autocompleteWrapper {
+        display: none !important;
+    }
+    table.dataTable tbody td {
+        padding: 2px 4px;
+    }
+    </style>
 </head>
 
 <body>
@@ -83,12 +90,18 @@
     </div>
 
     <script type="text/javascript">
-        YASGUI.defaults.catalogueEndpoints = [];
-        var yasgui = YASGUI(document.getElementById("yasgui"), {
-            persistencyPrefix: 'madb-lod',
-            endpoint: 'https://metadata.moe/sparql/madb/query',
-            api: {
-                urlShortener: "/sparql-shorten"
+        var yasgui = new Yasgui(document.getElementById("yasgui"), {
+            requestConfig: { endpoint: 'https://metadata.moe/sparql/madb/query' },
+            copyEndpointOnNewTab: false,
+            yasqe: {
+              createShortLink: function(yasqe, longString) {
+                return yasqe.superagent
+                  .get("/sparql-shorten")
+                  .query({ url: longString })
+                  .then(function(res) {
+                    return res.text;
+                  });
+              }
             }
         });
     </script>
