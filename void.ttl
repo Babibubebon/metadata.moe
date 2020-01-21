@@ -29,7 +29,7 @@
   dcterms:creator <https://babibubebo.org/about/profile/#babibubebon> ;
   dcterms:source <https://mediaarts-db.bunka.go.jp/> ;
   dcterms:created "2020-01-18"^^xsd:date ;
-  dcterms:modified "2020-01-18"^^xsd:date ;
+  dcterms:modified "2020-01-21"^^xsd:date ;
   dcterms:license <https://creativecommons.org/licenses/by/4.0/>, <https://mediaarts-db.bunka.go.jp/user_terms> ;
   foaf:homepage <https://metadata.moe/madb-lod/> ;
   foaf:page <https://metadata.moe/madb-lod/dumps/> ;
