@@ -24,8 +24,8 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
         integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
         crossorigin="anonymous"></script>
-    <link href="https://unpkg.com/@triply/yasgui@4.0.96/build/yasgui.min.css" rel="stylesheet" type="text/css">
-    <script src="https://unpkg.com/@triply/yasgui@4.0.96/build/yasgui.min.js"></script>
+    <link href="https://unpkg.com/@triply/yasgui@4.0.98/build/yasgui.min.css" rel="stylesheet" type="text/css">
+    <script src="https://unpkg.com/@triply/yasgui@4.0.98/build/yasgui.min.js"></script>
     <style>
     .yasgui .autocompleteWrapper {
         display: none !important;
@@ -82,9 +82,21 @@
                 Endpoint: <code>https://metadata.moe/sparql/madb/query</code>
             </p>
             <div id="yasgui"></div>
+
+            <section class="mt-4">
+                <h3>Examples </h3>
+                <div class="list-group">
+                    <a class="list-group-item list-group-item-action" onclick="openExample(this, 'TVSeriesPerYear');">
+                        公開年毎にTVアニメ数を集計する
+                    </a>
+                    <a class="list-group-item list-group-item-action" onclick="openExample(this, 'TVSeriesOrderByCountMarks');">
+                        タイトルに「!」「?」を多く含むTVアニメを取得する
+                    </a>
+                </div>
+            </section>
         </section>
 
-        <div class="card mt-4">
+        <section class="card mt-4">
             <div class="card-body">
                 <h5 class="card-title">ご利用にあたって</h5>
                 <ul>
@@ -94,16 +106,21 @@
                     <li>本データセットは、個人が独自に提供しているものですので、文化庁にお問い合わせされないようご注意ください。連絡先は<a href="https://babibubebo.org/about/contact/">こちら</a>か、内容に応じて<a href="https://github.com/Babibubebon/MADB-LOD/issues">GitHubのissue</a>にお願いします。</li>
                 </ul>
             </div>
-        </div>
+        </section>
 
     </div>
 
     <script type="text/javascript">
-        Yasgui.Yasr.defaults["prefixes"] = {
-            "ma": "https://metadata.moe/ns/madb/ma#"
-        };
+        var endopointUri = "https://metadata.moe/sparql/madb/query";
+        Yasgui.Yasqe.defaults.requestConfig.endpoint = endopointUri;
+        Yasgui.Yasqe.defaults.value = `PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ma: <https://metadata.moe/ns/madb/ma#>
+SELECT * WHERE {
+  ?sub ?pred ?obj .
+} LIMIT 10`;
         var yasgui = new Yasgui(document.getElementById("yasgui"), {
-            requestConfig: { endpoint: "https://metadata.moe/sparql/madb/query" },
+            requestConfig: {endpoint: endopointUri},
             copyEndpointOnNewTab: false,
             yasqe: {
               createShortLink: function(yasqe, longString) {
@@ -116,6 +133,43 @@
               }
             },
         });
+
+        function openExample(elm, exampleId) {
+            let tab = yasgui.getTab(exampleId);
+            if (!tab) {
+                tab = yasgui.addTab(true, {...Yasgui.Tab.getDefaults(), name: elm.textContent, id: exampleId});
+            }
+            tab.setQuery(queryExamples[exampleId]);
+            console.log(tab);
+        }
+
+        var queryExamples = {
+            "TVSeriesPerYear": `PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ma: <https://metadata.moe/ns/madb/ma#>
+SELECT ?y (COUNT(DISTINCT *) AS ?cnt)  WHERE {
+  ?s a ma:Collection ;
+     ma:media "TVレギュラー" ;
+     schema:startDate ?startDate .
+}
+GROUP BY (SUBSTR(?startDate, 1, 4) AS ?y)
+ORDER BY DESC(?y)`,
+            "TVSeriesOrderByCountMarks": `PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ma: <https://metadata.moe/ns/madb/ma#>
+SELECT ?s ?name ?mark WHERE {
+  ?s a ma:Collection ;
+     ma:media "TVレギュラー" ;
+     schema:name ?name .
+  FILTER(LANG(?name) = "")
+  FILTER (REGEX(?name, "[!！\\\\?？]+"))
+  BIND (REPLACE(?name, "[^!！\\\\?？]*([!！\\\\?？]+)[^!！\\\\?？]*", "$1") AS ?mark)
+}
+ORDER BY DESC(STRLEN(?mark))
+LIMIT 100`
+        };
     </script>
 </body>
 
