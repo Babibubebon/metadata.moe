@@ -190,6 +190,7 @@ WHERE {
   } UNION {
     ?item schema:contributor ?contributers .
   }
+  FILTER(LANG(?colName) = "")
   FILTER(REGEX(?contributers, "岡田\\\\s*麿里"))
   BIND(REPLACE(?contributers, ".*\\\\[(.+?)\\\\]岡田\\\\s*麿里.*", "$1") AS ?role)
 }
