@@ -92,6 +92,9 @@
                     <a class="list-group-item list-group-item-action" onclick="openExample(this, 'TVSeriesOrderByCountMarks');">
                         タイトルに「!」「?」を多く含むTVアニメを取得する
                     </a>
+                    <a class="list-group-item list-group-item-action" onclick="openExample(this, 'WorksOfMariOkada');">
+                        岡田麿里さん参加作品を取得する
+                    </a>
                 </div>
             </section>
         </section>
@@ -168,7 +171,29 @@ SELECT ?s ?name ?mark WHERE {
   BIND (REPLACE(?name, "[^!！\\\\?？]*([!！\\\\?？]+)[^!！\\\\?？]*", "$1") AS ?mark)
 }
 ORDER BY DESC(STRLEN(?mark))
-LIMIT 100`
+LIMIT 100`,
+            "WorksOfMariOkada": `PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ma: <https://metadata.moe/ns/madb/ma#>
+
+SELECT
+	?col ?colName (GROUP_CONCAT(DISTINCT ?role) AS ?roles)
+WHERE {
+  ?col a ma:Collection ;
+         ma:media ?media ;
+         schema:name ?colName ;
+         ^schema:isPartOf ?item .
+  VALUES ?media {"TVレギュラー" "劇場上映" "TVスペシャル"}
+  {
+  	?col schema:contributor ?contributers .
+  } UNION {
+    ?item schema:contributor ?contributers .
+  }
+  FILTER(REGEX(?contributers, "岡田\\\\s*麿里"))
+  BIND(REPLACE(?contributers, ".*\\\\[(.+?)\\\\]岡田\\\\s*麿里.*", "$1") AS ?role)
+}
+GROUP BY ?col ?colName`
         };
     </script>
 </body>
