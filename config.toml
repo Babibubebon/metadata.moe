@@ -1,0 +1,44 @@
+baseURL = "http://example.org/"
+languageCode = "ja-jp"
+theme = "hugo-theme-basic"
+title = "Metadata.Moe"
+description = "メタデータを愛でる人々のためのWebサイトです。"
+copyright = "© 2020 <a href=\"https://babibubebo.org/about/profile/\">Babibubebon</a> - <a href=\"https://babibubebo.org/about/site_about/\">Terms and Privacy</a>"
+
+googleAnalytics = "UA-7878096-15"
+enableEmoji = false 
+
+[params]
+  titleEmoji = ""
+  twitter = "bbbbbo_n"
+
+[[params.menu]]
+name = "あにむめも"
+url = "https://animedb.moe/"
+description = "アニメ作品のデータベース "
+
+[[params.menu]]
+name = "とあるSPARQL"
+url = "/toaru-sparql/"
+description = "とあるシリーズのデータセットとSPARQLエンドポイント"
+
+[[params.menu]]
+name = "メディア芸術データベース LOD"
+url = "project/madb-lod/"
+description = "メディア芸術データベース(ベータ版)のデータをRDFに変換したデータセット・SPARQLエンドポイント"
+
+[[params.menu]]
+name = "DBpedia Japanese mirror"
+url = "/dbpedia-ja/"
+description = " DBpedia JapaneseのSPARQLエンドポイント(Apache Jena Fuseki)"
+
+
+[privacy]
+  [privacy.googleAnalytics]
+    anonymizeIP = true
+    respectDoNotTrack = true
+    useSessionStorage = true
+  [privacy.twitter]
+    enableDNT = true
+  [privacy.youtube]
+    privacyEnhanced = true

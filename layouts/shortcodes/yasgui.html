@@ -1,0 +1,27 @@
+<div>
+  {{ with .Get "endpoint" }}
+  <p>
+    Endpoint: <code>{{ . }}</code>
+  </p>
+  {{ end }}
+  <div id="yasgui-{{ .Get "id" }}"></div>
+</div>
+
+<script>
+  yasgui["{{ .Get "id" }}"] = new Yasgui(document.getElementById("yasgui-{{ .Get "id" }}"), {
+    requestConfig: {{ dict "endpoint" (.Get "endpoint") }},
+    copyEndpointOnNewTab: false,
+    yasqe: {
+      {{ with .Get "default-query" }}
+      value: {{ . }}
+      {{ end }}
+    },
+  });
+</script>
+{{ if .Get "endpoint" }}
+<style>
+  #yasgui-{{ .Get "id" }} .yasgui .autocompleteWrapper {
+    display: none !important;
+  }
+</style>
+{{ end }}
