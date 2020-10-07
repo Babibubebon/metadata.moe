@@ -29,7 +29,7 @@
     <section id="main">
       <div>
         <h1 id="title">
-          {{ .Site.Title }} {{ .Site.Params.TitleEmoji | emojify }}
+          {{ .Site.Params.TitleLogo | safeHTML }} {{ .Site.Title }}
         </h1>
         <ul class="list pl0">
           <!-- pages -->

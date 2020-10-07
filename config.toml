@@ -9,7 +9,7 @@ googleAnalytics = "UA-7878096-15"
 enableEmoji = false 
 
 [params]
-  titleEmoji = ""
+  titleLogo = "<img src=\"/img/logo.svg\" width=\"48\" height=\"48\">"
   twitter = "bbbbbo_n"
 
 [[params.menu]]
@@ -19,7 +19,7 @@ description = "アニメ作品のデータベース "
 
 [[params.menu]]
 name = "とあるSPARQL"
-url = "/toaru-sparql/"
+url = "toaru-sparql/"
 description = "とあるシリーズのデータセットとSPARQLエンドポイント"
 
 [[params.menu]]
@@ -29,7 +29,7 @@ description = "メディア芸術データベース(ベータ版)のデータを
 
 [[params.menu]]
 name = "DBpedia Japanese mirror"
-url = "/dbpedia-ja/"
+url = "project/dbpedia-ja/"
 description = " DBpedia JapaneseのSPARQLエンドポイント(Apache Jena Fuseki)"
 
 

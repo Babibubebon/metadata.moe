@@ -1,0 +1,48 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <https://metadata.moe/void.ttl#> .
+
+<https://metadata.moe/void.ttl> a void:DatasetDescription ;
+  dcterms:title "A VoID description of metadata.moe datasets"@en ;
+  dcterms:creator <https://babibubebo.org/about/profile/#babibubebon> .
+
+:Toaru a void:Dataset ;
+  dcterms:title "とあるSPARQL" ;
+  dcterms:description "『とあるシリーズ』好きのためのRDFデータセット" ;
+  dcterms:publisher :BLab ;
+  dcterms:creator :Tenkuro ;
+  dcterms:created "2018-08-07"^^xsd:date ;
+  dcterms:modified "2018-12-08"^^xsd:date ;
+  dcterms:license <https://creativecommons.org/licenses/by-nc/4.0/> ;
+  foaf:homepage <https://metadata.moe/toaru-sparql/> ;
+  void:sparqlEndpoint <https://metadata.moe/sparql/toaru/query> ;
+  void:triples 26899 .
+
+:MADBLOD a void:Dataset ;
+  dcterms:title "Media Arts Database LOD (unofficial)"@en, "メディア芸術データベース LOD"@ja ;
+  dcterms:description "メディア芸術データベース Web APIから得られたデータをRDFに変換したデータセット" ;
+  dcterms:publisher :BLab ;
+  dcterms:creator <https://babibubebo.org/about/profile/#babibubebon> ;
+  dcterms:source <https://mediaarts-db.bunka.go.jp/> ;
+  dcterms:created "2020-01-18"^^xsd:date ;
+  dcterms:modified "2020-01-21"^^xsd:date ;
+  dcterms:license <https://creativecommons.org/licenses/by/4.0/>, <https://mediaarts-db.bunka.go.jp/user_terms> ;
+  foaf:homepage <https://metadata.moe/madb-lod/> ;
+  foaf:page <https://metadata.moe/madb-lod/dumps/> ;
+  void:dataDump <https://metadata.moe/madb-lod/dumps/madb_latest.nt.bz2> ;
+  void:sparqlEndpoint <https://metadata.moe/sparql/madb/query> ;
+  void:triples 19341483 .
+
+:BLab a foaf:Organization ;
+  dcterms:title "Babibubebo Laboratory"@en, "ばびぶべぼ研究室"@ja ;
+  dcterms:description "同人サークル" ;
+  foaf:homepage <https://babibubebo.org/lab/> ;
+  rdfs:seeAlso <https://portal.circle.ms/Circle/Index/10337598> .
+
+:Tenkuro a foaf:Person;
+  foaf:name "てんくろ" ;
+  foaf:account <https://twitter.com/etoile_014>, <https://www.nicovideo.jp/user/45112804> .
