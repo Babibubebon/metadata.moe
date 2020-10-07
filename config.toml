@@ -3,7 +3,7 @@ languageCode = "ja-jp"
 theme = "hugo-theme-basic"
 title = "Metadata.Moe"
 description = "メタデータを愛でる人々のためのWebサイトです。"
-copyright = "© 2020 <a href=\"https://babibubebo.org/about/profile/\">Babibubebon</a> - <a href=\"https://babibubebo.org/about/site_about/\">Terms and Privacy</a>"
+copyright = "© 2020 <a href=\"https://babibubebo.org/about/profile/\">Babibubebon</a>, <a href=\"https://babibubebo.org/lab/\">Babibubebo Lab</a> - <a href=\"https://babibubebo.org/about/site_about/\">Terms and Privacy</a>"
 
 googleAnalytics = "UA-7878096-15"
 enableEmoji = false 
