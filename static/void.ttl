@@ -31,9 +31,9 @@
   dcterms:created "2020-01-18"^^xsd:date ;
   dcterms:modified "2020-01-21"^^xsd:date ;
   dcterms:license <https://creativecommons.org/licenses/by/4.0/>, <https://mediaarts-db.bunka.go.jp/user_terms> ;
-  foaf:homepage <https://metadata.moe/madb-lod/> ;
-  foaf:page <https://metadata.moe/madb-lod/dumps/> ;
-  void:dataDump <https://metadata.moe/madb-lod/dumps/madb_latest.nt.bz2> ;
+  foaf:homepage <https://metadata.moe/project/madb-lod/> ;
+  foaf:page <https://metadata.moe/project/madb-lod/dumps/> ;
+  void:dataDump <https://metadata.moe/project/madb-lod/dumps/madb_latest.nt.bz2> ;
   void:sparqlEndpoint <https://metadata.moe/sparql/madb/query> ;
   void:triples 19341483 .
 
