@@ -1,4 +1,4 @@
-baseURL = "http://example.org/"
+baseURL = "https://metadata.moe/"
 languageCode = "ja-jp"
 theme = "hugo-theme-basic"
 title = "Metadata.Moe"
