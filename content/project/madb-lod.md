@@ -2,14 +2,8 @@
 title = "メディア芸術データベース LOD (Unofficial)"
 date = 2020-10-07T02:03:54+09:00
 description = "メディア芸術データベース(ベータ版)をLOD化したデータセット"
-tags = ["Development"]
-categories = ["Development"]
-download_url = "http://github.com/USERNAME/PROJECTNAME"
-project_description = "DESC"
-project_name = "PROJECTNAME"
-project_url = "URL"
-release_date = "DATE"
-version = "0.0"
+tags = []
+categories = ["SPARQL"]
 aliases = [
     '/madb-lod/'
 ]
