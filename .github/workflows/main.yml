@@ -34,7 +34,6 @@ jobs:
           SSH_PORT: ${{ secrets.SSH_PORT }}
           DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
           SSH_HOST: ${{ secrets.SSH_HOST }}
-      - name: Run tests
 
       - name: Notify slack success
         if: success()
