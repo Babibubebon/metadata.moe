@@ -34,3 +34,24 @@ jobs:
           SSH_PORT: ${{ secrets.SSH_PORT }}
           DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
           SSH_HOST: ${{ secrets.SSH_HOST }}
+      - name: Run tests
+
+      - name: Notify slack success
+        if: success()
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+        uses: voxmedia/github-action-slack-notify-build@v1
+        with:
+          channel: ${{ secrets.SLACK_CHANNEL_NAME }}
+          status: SUCCESS
+          color: good
+
+      - name: Notify slack fail
+        if: failure()
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+        uses: voxmedia/github-action-slack-notify-build@v1
+        with:
+          channel: ${{ secrets.SLACK_CHANNEL_NAME }}
+          status: FAILED
+          color: danger
