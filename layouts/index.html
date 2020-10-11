@@ -1,36 +1,32 @@
 <!DOCTYPE html>
-<html
-  class=""
-  lang="{{ .Site.LanguageCode }}"
-  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"
->
-  <head>
-    <meta charset="utf-8" />
+<html class="" lang="{{ .Site.LanguageCode }}" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
 
-    {{ partial "meta.html" . }}
+<head>
+  <meta charset="utf-8" />
 
-    <title>{{ .Site.Title }}</title>
-    <link rel="canonical" href="{{ .Permalink }}" />
-{{ $sitetitle := .Site.Title }}
-{{ with .OutputFormats.Get "RSS" }}
-    <link
-      href="{{ .RelPermalink }}"
-      rel="alternate"
-      type="application/rss+xml"
-      title="{{ $sitetitle }}"
-    />
-{{ end }}
-    {{ partial "head_includes.html" . }}
-  </head>
-  <body
-    lang="{{ .Site.LanguageCode }}"
-    class="sans-serif w-90 w-60-ns center center-ns mv2 mv5-ns"
-  >
-    <section id="main">
-      <div>
-        <h1 id="title">
-          {{ .Site.Params.TitleLogo | safeHTML }} <ruby>{{ .Site.Title }} <rp>(</rp><rt>メタデータ萌え</rt><rp>)</rp></ruby>
-        </h1>
+  {{ partial "meta.html" . }}
+
+  <title>{{ .Site.Title }}</title>
+  <link rel="canonical" href="{{ .Permalink }}" />
+  {{ $sitetitle := .Site.Title }}
+  {{ with .OutputFormats.Get "RSS" }}
+  <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $sitetitle }}" />
+  {{ end }}
+  {{ partial "head_includes.html" . }}
+</head>
+
+<body lang="{{ .Site.LanguageCode }}" class="sans-serif w-90 w-60-ns center center-ns mv2 mv5-ns">
+  <section id="main">
+
+      <h1 id="title">
+        {{ .Site.Params.TitleLogo | safeHTML }} <ruby>{{ .Site.Title }} <rp>(</rp>
+          <rt>メタデータ萌え</rt>
+          <rp>)</rp>
+        </ruby>
+      </h1>
+
+      <section>
+        <h2>Projects</h2>
         <ul class="list pl0">
           <!-- pages -->
           <!-- prettier-ignore -->
@@ -42,9 +38,11 @@
           <!-- prettier-ignore -->
           {{ end }}
         </ul>
-      </div>
-    </section>
+      </section>
 
-    {{ partial "footer.html" . }}
-  </body>
+  </section>
+
+  {{ partial "footer.html" . }}
+</body>
+
 </html>

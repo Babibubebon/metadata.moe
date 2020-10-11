@@ -10,6 +10,7 @@
 <script>
   yasgui["{{ .Get "id" }}"] = new Yasgui(document.getElementById("yasgui-{{ .Get "id" }}"), {
     requestConfig: {{ dict "endpoint" (.Get "endpoint") }},
+    persistenceId: "{{ .Get "id" }}",
     copyEndpointOnNewTab: false,
     yasqe: {
       {{ with .Get "default-query" }}
