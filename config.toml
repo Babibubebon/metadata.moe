@@ -33,9 +33,14 @@ name = "DBpedia Japanese mirror"
 url = "project/dbpedia-ja/"
 
 [[params.menu]]
-description = "アニメ作品のメタデータを追求する"
+description = "アニメ作品のメタデータを探究する"
 name = "AniMetadata Research"
 url = "project/animetadata/"
+
+[[params.menu]]
+description = "メタデータ好きのためのFediverseインスタンス"
+name = "Social.Metadata.Moe"
+url = "https://social.metadata.moe/"
 
 [privacy]
 [privacy.googleAnalytics]
