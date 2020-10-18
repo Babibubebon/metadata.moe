@@ -18,7 +18,7 @@
 <body lang="{{ .Site.LanguageCode }}" class="sans-serif w-90 w-60-ns center center-ns mv2 mv5-ns">
   <section id="main">
 
-      <h1 id="title">
+      <h1 id="title" class="f1 lh-title bb">
         {{ .Site.Params.TitleLogo | safeHTML }} <ruby>{{ .Site.Title }} <rp>(</rp>
           <rt>メタデータ萌え</rt>
           <rp>)</rp>
@@ -26,13 +26,13 @@
       </h1>
 
       <section>
-        <h2>Projects</h2>
-        <ul class="list pl0">
+        <h2 class="f2">Projects</h2>
+        <ul class="list pl3">
           <!-- pages -->
           <!-- prettier-ignore -->
           {{ range .Site.Params.menu }}
           <li class="mv3">
-            <a class="b f3 b pa1 black" href="{{ .url }}">{{ .name }}</a>
+            <a class="f3 b pa1 black" href="{{ .url }}">{{ .name }}</a>
             <p>{{ .description }}</p>
           </li>
           <!-- prettier-ignore -->
