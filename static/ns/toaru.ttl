@@ -1,0 +1,662 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix geo:   <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix toaru: <https://metadata.moe/toaru-sparql/> .
+
+<https://metadata.moe/toaru-sparql/>
+  a   owl:Ontology ;
+    rdfs:label "toaru-schema"@ja ;
+  dcterms:creator [
+                    foaf:name "tenkuro"@ja
+                  ];
+  dcterms:issued   "2018-07-29" .
+
+#Class
+  toaru:Concept	a	rdfs:Class ;
+    rdfs:label	"概念"@ja ;
+    rdfs:comment	"現状では細分化が難しいものがこれに所属している(抽象的な概念やメタな概念等)" .
+
+  toaru:Character	a	rdfs:Class ;
+    rdfs:label	"キャラクター"@ja ;
+    rdfs:comment	"動植物の扱いをどうするかの議論がある。" ;
+    rdfs:subClassOf	toaru:Concept .
+
+  toaru:Person	a	rdfs:Class ;
+    rdfs:label	"人物"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Character .
+
+  toaru:MagicGod	a	rdfs:Class ;
+    rdfs:label	"魔神"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Person .
+
+  toaru:Esper	a	rdfs:Class ;
+    rdfs:label	"超能力者"@ja ;
+    rdfs:comment	"土御門元春のように、魔術師が超能力開発を行った場合も超能力者に所属する。現在はまだ人物の分類ができていないです。" ;
+    rdfs:subClassOf	toaru:Person .
+
+  toaru:Magicain	a	rdfs:Class ;
+    rdfs:label	"魔術師"@ja ;
+    rdfs:comment	"魔法名が判明しているかどうかは問わない。現在はまだ人物の分類ができていないです" ;
+    rdfs:subClassOf	toaru:Person .
+
+  toaru:God	a	rdfs:Class ;
+    rdfs:label	"神"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Character .
+
+  toaru:Angel	a	rdfs:Class ;
+    rdfs:label	"天使"@ja ;
+    rdfs:comment	"エイワスは物理層の天使とここでは捉えておく(2018-07-29現在)" ;
+    rdfs:subClassOf	toaru:Character .
+
+  toaru:Devil	a	rdfs:Class ;
+    rdfs:label	"悪魔"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Character .
+
+  toaru:AstralBody	a	rdfs:Class ;
+    rdfs:label	"非実体物"@ja ;
+    rdfs:comment	"クラス名なども含めて議論がある" ;
+    rdfs:subClassOf	toaru:Character .
+
+  toaru:ArtificialInteligence	a	rdfs:Class ;
+    rdfs:label	"人工知能"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Character .
+
+  toaru:Organism	a	rdfs:Class ;
+    rdfs:label	"生命体"@ja ;
+    rdfs:comment	"妹達の扱いをどうするべきかの議論がある" ;
+    rdfs:subClassOf	toaru:Character .
+
+  toaru:Product	a	rdfs:Class ;
+    rdfs:label	"製品"@ja ;
+    rdfs:comment	"まだ分類が不十分" ;
+    rdfs:subClassOf	toaru:Concept .
+
+  toaru:Vehicle	a	rdfs:Class ;
+    rdfs:label	"乗り物"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Product .
+
+  toaru:Car	a	rdfs:Class ;
+    rdfs:label	"車"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Vehicle .
+
+  toaru:Ship	a	rdfs:Class ;
+    rdfs:label	"船舶"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Vehicle .
+
+  toaru:SpaceShip	a	rdfs:Class ;
+    rdfs:label	"宇宙船"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Vehicle .
+
+  toaru:Service	a	rdfs:Class ;
+    rdfs:label	"サービス"@ja ;
+    rdfs:comment	"検討の余地あり" ;
+    rdfs:subClassOf	toaru:Product .
+
+  toaru:Dataset	a	rdfs:Class ;
+    rdfs:label	"データセット"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Product .
+
+  toaru:Gadget	a	rdfs:Class ;
+    rdfs:label	"小道具"@ja ;
+    rdfs:comment	"検討の余地あり" ;
+    rdfs:subClassOf	toaru:Product .
+
+  toaru:Device	a	rdfs:Class ;
+    rdfs:label	"装置"@ja ;
+    rdfs:comment	"検討の余地あり" ;
+    rdfs:subClassOf	toaru:Product .
+
+  toaru:Weapon	a	rdfs:Class ;
+    rdfs:label	"武器"@ja ;
+    rdfs:comment	"細分化等の検討の余地あり" ;
+    rdfs:subClassOf	toaru:Product .
+
+  toaru:PoweredSuit	a	rdfs:Class ;
+    rdfs:label	"駆動鎧"@ja ;
+    rdfs:comment	"ラベルの検討の余地あり" ;
+    rdfs:subClassOf	toaru:Product .
+
+  toaru:Media	a	rdfs:Class ;
+    rdfs:label	"メディア"@ja ;
+    rdfs:comment	"検討の余地あり。まだ分類が不十分" ;
+    rdfs:subClassOf	toaru:Product .
+
+  toaru:BroadcastProgram	a	rdfs:Class ;
+    rdfs:label	"放送番組"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Media .
+
+  toaru:Radio	a	rdfs:Class ;
+    rdfs:label	"ラジオ"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Media .
+
+  toaru:Book	a	rdfs:Class ;
+    rdfs:label	"本"@ja ;
+    rdfs:comment	"雑誌を分ける等の議論が必要" ;
+    rdfs:subClassOf	toaru:Media .
+
+  toaru:Game	a	rdfs:Class ;
+    rdfs:label	"ゲーム"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Media .
+
+  toaru:Movie	a	rdfs:Class ;
+    rdfs:label	"映画"@ja ;
+    rdfs:comment	"現在は分類の不十分でインスタンスがない" ;
+    rdfs:subClassOf	toaru:Media .
+
+  toaru:Newspaper	a	rdfs:Class ;
+    rdfs:label	"新聞"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Media .
+
+  toaru:Clothes	a	rdfs:Class ;
+    rdfs:label	"衣服"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Product .
+
+  toaru:Food	a	rdfs:Class ;
+    rdfs:label	"食品"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Product .
+
+  toaru:Beverage	a	rdfs:Class ;
+    rdfs:label	"飲料"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Food .
+
+  toaru:Dish	a	rdfs:Class ;
+    rdfs:label	"料理"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Food .
+
+  toaru:Grimoire	a	rdfs:Class ;
+    rdfs:label	"魔道書"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Product .
+
+  toaru:MagicItem	a	rdfs:Class ;
+    rdfs:label	"霊装"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Product .
+
+  toaru:MascotCharacter	a	rdfs:Class ;
+    rdfs:label	"マスコットキャラクター"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Product .
+
+  toaru:Medicine	a	rdfs:Class ;
+    rdfs:label	"薬"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Product .
+
+  toaru:Location	a	rdfs:Class ;
+    rdfs:label	"場所"@ja ;
+    rdfs:comment	"現状では分類が不十分" ;
+    rdfs:subClassOf	toaru:Concept .
+
+  toaru:GPE	a	rdfs:Class ;
+    rdfs:label	"地域"@ja ;
+    rdfs:comment	"" ;
+    rdfs:subClassOf	toaru:Location .
+
+  toaru:Block	a	rdfs:Class ;
+    rdfs:label	"区画"@ja ;
+    rdfs:comment	"定義の議論の余地あり" ;
+    rdfs:subClassOf	toaru:GPE .
+
+  toaru:Country	a	rdfs:Class ;
+    rdfs:label	"国"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:GPE .
+
+  toaru:City	a	rdfs:Class ;
+    rdfs:label	"都市"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:GPE .
+
+  toaru:ArchaeologicalPlace	a	rdfs:Class ;
+    rdfs:label	"遺跡"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Location .
+
+  toaru:Orgaization	a	rdfs:Class ;
+    rdfs:label	"組織"@ja ;
+    rdfs:comment	"まだ分類が不十分です" ;
+    rdfs:subClassOf	toaru:Concept .
+
+  toaru:SecurityOrganization	a	rdfs:Class ;
+    rdfs:label	"治安維持組織"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Orgaization .
+
+  toaru:Corporation	a	rdfs:Class ;
+    rdfs:label	"企業"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Orgaization .
+
+  toaru:MercenaryOrganization	a	rdfs:Class ;
+    rdfs:label	"暗部組織"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Orgaization .
+
+  toaru:ResearchInstitution	a	rdfs:Class ;
+    rdfs:label	"研究組織"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Orgaization .
+
+  toaru:MagicCabal	a	rdfs:Class ;
+    rdfs:label	"魔術結社"@ja ;
+    rdfs:comment	"魔術結社もどきもこれに該当する" ;
+    rdfs:subClassOf	toaru:Orgaization .
+
+  toaru:Clan	a	rdfs:Class ;
+    rdfs:label	"一族"@ja ;
+    rdfs:comment	"議論の余地あり" ;
+    rdfs:subClassOf	toaru:Orgaization .
+
+  toaru:Facility	a	rdfs:Class ;
+    rdfs:label	"施設"@ja ;
+    rdfs:comment	"まだ分類が不十分です" ;
+    rdfs:subClassOf	toaru:Concept .
+
+  toaru:CommercialFacility	a	rdfs:Class ;
+    rdfs:label	"商業施設"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Facility .
+
+  toaru:PublicFacility	a	rdfs:Class ;
+    rdfs:label	"公共施設"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Facility .
+
+  toaru:School	a	rdfs:Class ;
+    rdfs:label	"学校"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Facility .
+
+  toaru:Fort	a	rdfs:Class ;
+    rdfs:label	"軍事施設"@ja ;
+    rdfs:comment	"議論の余地あり" ;
+    rdfs:subClassOf	toaru:Facility .
+
+  toaru:Ability	a	rdfs:Class ;
+    rdfs:label	"能力"@ja ;
+    rdfs:comment	"科学や魔術、技術に分類できないものはここで記述" ;
+    rdfs:subClassOf	toaru:Concept .
+
+  toaru:Magic	a	rdfs:Class ;
+    rdfs:label	"魔術"@ja ;
+    rdfs:comment	"天使の術式等議論の必要がある" ;
+    rdfs:subClassOf	toaru:Ability .
+
+  toaru:EsperPower	a	rdfs:Class ;
+    rdfs:label	"超能力"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Ability .
+
+  toaru:Technique	a	rdfs:Class ;
+    rdfs:label	"技術"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Ability .
+
+  toaru:Rule	a	rdfs:Class ;
+    rdfs:label	"規則"@ja ;
+    rdfs:comment	"議論の余地あり" ;
+    rdfs:subClassOf	toaru:Concept .
+
+  toaru:Institution	a	rdfs:Class ;
+    rdfs:label	"制度"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Rule .
+
+  toaru:Punishment	a	rdfs:Class ;
+    rdfs:label	"刑罰"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Rule .
+
+  toaru:Disease	a	rdfs:Class ;
+    rdfs:label	"病気"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Concept .
+
+  toaru:Lore	a	rdfs:Class ;
+    rdfs:label	"伝承"@ja ;
+    rdfs:comment	"議論の余地あり" ;
+    rdfs:subClassOf	toaru:Concept .
+
+  toaru:Anecdote	a	rdfs:Class ;
+    rdfs:label	"逸話"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Lore .
+
+  toaru:Rumor	a	rdfs:Class ;
+    rdfs:label	"噂"@ja ;
+    rdfs:comment	"" ;
+    rdfs:subClassOf	toaru:Lore .
+
+  toaru:NaturalObject	a	rdfs:Class ;
+    rdfs:label	"自然物"@ja ;
+    rdfs:comment	"議論の余地あり" ;
+    rdfs:subClassOf	toaru:Concept .
+
+  toaru:LivingThing	a	rdfs:Class ;
+    rdfs:label	"生物"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:NaturalObject .
+
+  toaru:Insect	a	rdfs:Class ;
+    rdfs:label	"昆虫"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:LivingThing .
+
+  toaru:Mammal	a	rdfs:Class ;
+    rdfs:label	"哺乳類"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:LivingThing .
+
+  toaru:Reptile	a	rdfs:Class ;
+    rdfs:label	"爬虫類"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:LivingThing .
+
+  toaru:Phenomenon	a	rdfs:Class ;
+    rdfs:label	"現象"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Concept .
+
+  toaru:NaturalPhenomenon	a	rdfs:Class ;
+    rdfs:label	"自然現象"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Phenomenon .
+
+  toaru:AstronomicalPhenomenon	a	rdfs:Class ;
+    rdfs:label	"天体現象"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:NaturalPhenomenon .
+
+  toaru:SocialPhenomenon	a	rdfs:Class ;
+    rdfs:label	"社会現象"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Phenomenon .
+
+  toaru:ParanormalPhenomenon	a	rdfs:Class ;
+    rdfs:label	"超常現象"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Phenomenon .
+
+  toaru:Event	a	rdfs:Class ;
+    rdfs:label	"イベント"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Concept .
+
+  toaru:Occasion	a	rdfs:Class ;
+    rdfs:label	"行事"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Event .
+
+  toaru:Experiment	a	rdfs:Class ;
+    rdfs:label	"実験"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Event .
+
+  toaru:Incident	a	rdfs:Class ;
+    rdfs:label	"事件"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Event .
+
+  toaru:Plan	a	rdfs:Class ;
+    rdfs:label	"計画"@ja ;
+    rdfs:comment	"ここでは計画を広義にとらえて、その実行内容考えてイベントに配置した。議論の余地あり。" ;
+    rdfs:subClassOf	toaru:Event .
+
+  toaru:Language	a	rdfs:Class ;
+    rdfs:label	"言語"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Concept .
+
+  toaru:Position	a	rdfs:Class ;
+    rdfs:label	"地位"@ja ;
+    rdfs:comment	"分類が不十分のものも含まれる" ;
+    rdfs:subClassOf	toaru:Concept .
+
+  toaru:DoctrineMethod	a	rdfs:Class ;
+    rdfs:label	"主義方式"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Concept .
+
+  toaru:Religion	a	rdfs:Class ;
+    rdfs:label	"宗教"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:DoctrineMethod .
+
+  toaru:Theory	a	rdfs:Class ;
+    rdfs:label	"理論"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:DoctrineMethod .
+
+  toaru:ScientificTheory	a	rdfs:Class ;
+    rdfs:label	"科学理論"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Theory .
+
+  toaru:MagicTheory	a	rdfs:Class ;
+    rdfs:label	"魔術理論"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Theory .
+
+  toaru:Name	a	rdfs:Class ;
+    rdfs:label	""@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Concept .
+
+  toaru:PersonName	a	rdfs:Class ;
+    rdfs:label	"人名"@ja ;
+    rdfs:comment	"ヒトの俗称や別称のこと、議論の余地あり" ;
+    rdfs:subClassOf	toaru:Name .
+
+  toaru:MagicName	a	rdfs:Class ;
+    rdfs:label	"魔法名"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Name .
+
+  toaru:Metrix	a	rdfs:Class ;
+    rdfs:label	"指標"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Concept .
+
+  toaru:AbilityMetrix	a	rdfs:Class ;
+    rdfs:label	"能力強度"@ja ;
+    rdfs:comment	"-" ;
+    rdfs:subClassOf	toaru:Metrix .
+
+  #Property
+ toaru:appered a rdf:Property;
+    rdfs:label	"イラスト対象"@ja ;
+    rdfs:comment	"-"@ja .
+
+ toaru:book_format a rdf:Property;
+    rdfs:label	"判型"@ja ;
+    rdfs:comment	"-"@ja .
+
+ toaru:chapter_title_main a rdf:Property;
+    rdfs:label	"メインタイトル"@ja ;
+    rdfs:comment	"-"@ja .
+
+ toaru:chapter_title_sub a rdf:Property;
+    rdfs:label	"サブタイトル"@ja ;
+    rdfs:comment	"-"@ja .
+
+ toaru:color a rdf:Property;
+    rdfs:label	"色"@ja ;
+    rdfs:comment	"-"@ja .
+
+ toaru:contributor a rdf:Property;
+    rdfs:label	"貢献者"@ja ;
+    rdfs:comment	"-"@ja .
+
+ toaru:dengeki_bunko_consecutive_number a rdf:Property;
+    rdfs:label	"電撃文庫 通巻番号"@ja ;
+    rdfs:comment	"-"@ja .
+
+ toaru:dengeki_bunko_reference_number a rdf:Property;
+    rdfs:label	"電撃文庫 整理番号"@ja ;
+    rdfs:comment	"-"@ja .
+
+ toaru:desc_header a rdf:Property;
+    rdfs:label	"見出し"@ja ;
+    rdfs:comment	"-"@ja .
+
+ toaru:desc_long a rdf:Property;
+    rdfs:label	"長いあらすじ"@ja ;
+    rdfs:comment	"-"@ja .
+
+ toaru:desc_short a rdf:Property;
+    rdfs:label	"短いあらすじ"@ja ;
+    rdfs:comment	"-"@ja .
+
+ toaru:end_page_number a rdf:Property;
+    rdfs:label	"終了ページ"@ja ;
+    rdfs:comment	"-"@ja .
+
+ toaru:episode_notation a rdf:Property;
+    rdfs:label	"各章表記"@ja ;
+    rdfs:comment	"-"@ja .
+
+ toaru:episode_sort_number a rdf:Property;
+    rdfs:label	"開始ページ"@ja ;
+    rdfs:comment	"-"@ja .
+
+ toaru:isbn a rdf:Property;
+    rdfs:label	"ISBN"@ja ;
+    rdfs:comment	"-"@ja .
+
+ toaru:isDrawnBy a rdf:Property;
+    rdfs:label	"イラストレーター"@ja ;
+    rdfs:comment	"-"@ja .
+
+ toaru:isIncludedIn a rdf:Property;
+    rdfs:label	"該当巻数"@ja ;
+    rdfs:comment	"-"@ja .
+
+ toaru:note a rdf:Property;
+    rdfs:label	"備考"@ja ;
+    rdfs:comment	"-"@ja .
+
+ toaru:page a rdf:Property;
+    rdfs:label	"ページ数"@ja ;
+    rdfs:comment	"-"@ja .
+
+ toaru:price a rdf:Property;
+    rdfs:label	"価格"@ja ;
+    rdfs:comment	"-"@ja .
+
+ toaru:provenance_url a rdf:Property;
+    rdfs:label	"由来URL"@ja ;
+    rdfs:comment	"-"@ja .
+
+ toaru:publish_label a rdf:Property;
+    rdfs:label	"レーベル"@ja ;
+    rdfs:comment	"-"@ja .
+
+ toaru:release_date a rdf:Property;
+    rdfs:label	"発売年月日"@ja ;
+    rdfs:comment	"-"@ja .
+
+ toaru:role a rdf:Property;
+    rdfs:label	"役割"@ja ;
+    rdfs:comment	"-"@ja .
+
+ toaru:start_page_number a rdf:Property;
+    rdfs:label	"開始ページ"@ja ;
+    rdfs:comment	"-"@ja .
+
+ toaru:thumbneil_url a rdf:Property;
+    rdfs:label	"サムネイルURL"@ja ;
+    rdfs:comment	"-"@ja .
+
+ toaru:title a rdf:Property;
+    rdfs:label	"タイトル"@ja ;
+    rdfs:comment	"-"@ja .
+
+ toaru:trial_url a rdf:Property;
+    rdfs:label	"試し読みURL"@ja ;
+    rdfs:comment	"-"@ja .
+
+  toaru:cv a rdf:Property;
+    rdfs:label	"声優"@ja ;
+    rdfs:comment	"-"@ja .
+
+  toaru:cvEn a rdf:Property;
+    rdfs:label	"声優(英語圏)"@ja ;
+    rdfs:comment	"-"@ja .
+
+  toaru:description a rdf:Property;
+    rdfs:label	"解説"@ja ;
+    rdfs:comment	"-"@ja .
+
+  toaru:esperPowerLevel a rdf:Property;
+    rdfs:label	"超能力レベル"@ja ;
+    rdfs:comment	"-"@ja .
+
+  toaru:firstAppearanceheight a rdf:Property;
+    rdfs:label	"初出"@ja ;
+    rdfs:comment	"-"@ja .
+
+  toaru:height a rdf:Property;
+    rdfs:label	"身長"@ja ;
+    rdfs:comment	"-"@ja .
+
+  toaru:isInspiredBy a rdf:Property;
+    rdfs:label	"元ネタ"@ja ;
+    rdfs:comment	"-"@ja .
+
+  toaru:note a rdf:Property;
+    rdfs:label	"備考"@ja ;
+    rdfs:comment	"-"@ja .
+
+  toaru:provenanceUrl a rdf:Property;
+    rdfs:label	"由来URL"@ja ;
+    rdfs:comment	"-"@ja .
+
+  toaru:relatedTo a rdf:Property;
+    rdfs:label	"関連項目"@ja ;
+    rdfs:comment	"-"@ja .
+
+  toaru:side a rdf:Property;
+    rdfs:label	"サイド"@ja ;
+    rdfs:comment	"科学/魔術/一般"@ja .
+
+  toaru:status a rdf:Property;
+    rdfs:label	"ステータス"@ja ;
+    rdfs:comment	"現存,死亡など"@ja .
+
+  toaru:tag a rdf:Property;
+    rdfs:label	"種別タグ"@ja ;
+    rdfs:comment	"@Wikiでの正規化前の種別"@ja .
+
+  toaru:title a rdf:Property;
+    rdfs:label	"リソース名"@ja ;
+    rdfs:comment	"-"@ja .
+
+  toaru:titleYomi a rdf:Property;
+    rdfs:label	"リソース名ヨミ"@ja ;
+    rdfs:comment	"-"@ja .

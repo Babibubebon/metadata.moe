@@ -76,7 +76,7 @@ version = "0.0"
     - ジャンルのデータソースは、Wikipedia日本語版の[Infobox animanga](https://ja.wikipedia.org/wiki/Template:Infobox_animanga)の「ジャンル」
 - 類似アニメ検索: http://ruijianime.com/
 
-#### 海外
+#### 海外[^1]
 - AniDB: https://anidb.net/
     - API / Dataset: https://wiki.anidb.net/API
 - Anime News Network: https://www.animenewsnetwork.com/
@@ -94,13 +94,21 @@ version = "0.0"
 - aniSearch: https://www.anisearch.com/ , https://www.anisearch.de/
 - TheTVDB: https://thetvdb.com/
 - The Movie Database: https://www.themoviedb.org/
+
+
+### LODとして公開されているもの
+- im@sparql: https://sparql.crssnky.xyz/imas/
+    - アイドルマスターシリーズ
+- PrismDB: https://prismdb.takanakahiko.me/
+    - プリティーシリーズ
 - Between Our Worlds: https://betweenourworlds.org/
-    - LODデータセットとして公開しているっぽい: https://betweenourworlds.org/data/
+    - アニメ作品全般のLODデータセットとして公開しているっぽい: https://betweenourworlds.org/data/
         - Kitsu APIのデータを使っている？
         - aniDB, MyAnimeList, Crunchyroll, Funimation, HIDIVE, CONtv, trakt.tv, Amazon.comなどへのリンクあり(これもKitsu由来かな？)
         - RMLでRDFへの変換ルールを書いている: https://github.com/BetweenOurWorlds/generation-rules
     - オントロジ: https://betweenourworlds.org/ontology/
+- OntologySummit2014 Hackathon ReferenceDataForAnimeAndManga:
+    - http://ontolog.cim3.net/wiki/OntologySummit2014_Hackathon_ReferenceDataForAnimeAndManga.html
+    - https://github.com/ailev/anird
 
-<small>
-海外のサイトのうち、いわゆるフェアユースを明らかに超えるような、違法なコンテンツ共有を主たる目的としたサイトは除いています。
-</small>
+[^1]: 海外のサイトのうち、いわゆるフェアユースを明らかに超えるような、違法なコンテンツ共有を主たる目的としたサイトは除いています。
