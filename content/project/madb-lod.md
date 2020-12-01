@@ -16,7 +16,7 @@ aliases = [
 
 ## Query with SPARQL
 
-{{< yasgui id="madb-lod" endpoint="https://metadata.moe/sparql/madb/query"
+{{< yasgui id="madb-lod" endpoint="https://sparql.metadata.moe/madb/query"
 default-query=`PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX ma: <https://metadata.moe/ns/madb/ma#>
