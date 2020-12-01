@@ -13,4 +13,4 @@ aliases = [
 
 提供しているデータセットは[2016-04-07版](http://ja.dbpedia.org/dumps/20160407/)です。 
 
-{{< yasgui id="dbpedia-ja" endpoint="https://metadata.moe/sparql/dbpedia-ja/query" >}}
+{{< yasgui id="dbpedia-ja" endpoint="https://sparql.metadata.moe/dbpedia-ja/query" >}}
