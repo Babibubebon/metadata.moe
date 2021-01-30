@@ -9,10 +9,20 @@ aliases = [
 ]
 +++
 
+**2021/01/25** メディア芸術データベース(ベータ版)のデータセットがLinked Open Dataとして提供されました。
+
+- https://github.com/mediaarts-db/dataset
+
+以下は古い情報ですので、ご注意ください。
+
+----
+
 [メディア芸術データベース (ベータ版)](https://mediaarts-db.bunka.go.jp/)が試験的に公開している[Web API](https://mediaarts-db.bunka.go.jp/about#anc02)から取得したデータを RDF へ変換して作成したデータセットです。
 
 - [変換スクリプト](https://github.com/Babibubebon/MADB-LOD)
 - [RDF データダンプ](./dumps/)
+
+以下は2020/01/16時点で取得したデータを提供しています。
 
 ## Query with SPARQL
 
