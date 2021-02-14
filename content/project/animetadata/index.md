@@ -60,6 +60,7 @@ version = "0.0"
 - テレビアニメ放映リスト: http://tvanime.g1.xrea.com/
 - アニメスタッフリスト データベース: (Internet Archive) https://web.archive.org/web/20190306231639/http://www.geocities.jp/inutori_bekkan/database/
 - SF MOVIE DataBank: http://www.generalworks.com/databank/movie/
+- アニメな話-スポンサー一覧: http://hp1.cyberstation.ne.jp/sh-kato/anime/anime-c.html
 - .lain アニメデータベース: http://lain.gr.jp/mediadb
 - アニメ評価データベース さち: https://www.animesachi.com/
 - NeoApo: http://neoapo.com/
