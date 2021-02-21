@@ -98,6 +98,9 @@ version = "0.0"
 
 
 ### LODとして公開されているもの
+- メディア芸術データベース（ベータ版）データセット: https://github.com/mediaarts-db/dataset
+    - RDF形式のデータダンプが公開されている
+    - メタデータスキーマ仕様書: [MADBメタデータスキーマ仕様書（Ver.0.9）.pdf](https://github.com/mediaarts-db/dataset/blob/ea0d43b555f412b127bb2e8127b7469d6e42fa29/doc/MADB%E3%83%A1%E3%82%BF%E3%83%87%E3%83%BC%E3%82%BF%E3%82%B9%E3%82%AD%E3%83%BC%E3%83%9E%E4%BB%95%E6%A7%98%E6%9B%B8%EF%BC%88Ver.0.9%EF%BC%89.pdf)
 - im@sparql: https://sparql.crssnky.xyz/imas/
     - アイドルマスターシリーズ
 - PrismDB: https://prismdb.takanakahiko.me/
