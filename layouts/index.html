@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html class="" lang="{{ .Site.LanguageCode }}" prefix="og: http://ogp.me/ns#">
-
+<html lang="{{ .Site.LanguageCode }}" prefix="schema: https://schema.org/ og: http://ogp.me/ns#">
 <head>
   <meta charset="utf-8" />
 
@@ -15,7 +14,7 @@
   {{ partial "head_includes.html" . }}
 </head>
 
-<body lang="{{ .Site.LanguageCode }}" class="sans-serif w-90 w-60-ns center center-ns mv2 mv5-ns">
+<body lang="{{ .Site.LanguageCode }}" class="sans-serif w-90 w-60-ns center center-ns mv2 mv5-ns" typeof="schema:WebSite">
   <section id="main">
 
       <h1 id="title" class="f1 lh-title bb">
