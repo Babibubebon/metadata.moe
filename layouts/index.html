@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="" lang="{{ .Site.LanguageCode }}" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<html class="" lang="{{ .Site.LanguageCode }}" prefix="og: http://ogp.me/ns#">
 
 <head>
   <meta charset="utf-8" />
@@ -24,6 +24,12 @@
           <rp>)</rp>
         </ruby>
       </h1>
+
+      {{ with .Content -}}
+      <section>
+        {{ . }}
+      </section>
+      {{ end -}}
 
       <section>
         <h2 class="f2">Projects</h2>

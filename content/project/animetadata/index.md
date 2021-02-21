@@ -1,9 +1,9 @@
 +++
 title = "AniMetadata Research"
 date = 2020-10-12T04:04:00+09:00
-description = ""
-tags = ["Development"]
-categories = ["Development"]
+description = "アニメ作品のメタデータの情報源"
+tags = []
+categories = ["Anime"]
 download_url = "http://github.com/USERNAME/PROJECTNAME"
 project_description = "DESC"
 project_name = "PROJECTNAME"
