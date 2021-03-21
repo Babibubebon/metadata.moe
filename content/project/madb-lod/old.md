@@ -1,19 +1,18 @@
 +++
-title = "メディア芸術データベース LOD (Unofficial)"
+title = "メディア芸術データベース LOD (Deprecated)"
 date = 2020-10-07T02:03:54+09:00
 description = "メディア芸術データベース(ベータ版)をLOD化したデータセット"
 tags = []
 categories = ["SPARQL"]
-aliases = [
-    '/madb-lod/'
-]
 +++
 
-**2021/01/25** メディア芸術データベース(ベータ版)のデータセットがLinked Open Dataとして提供されました。
+**2021/01/25** メディア芸術データベース(ベータ版)のLODデータセットが公式に公開されました。
 
-- https://github.com/mediaarts-db/dataset
+公式のデータセットのSPARQLエンドポイントは以下のページで提供しています。
 
-以下は古い情報ですので、ご注意ください。
+- [メディア芸術データベース SPARQLエンドポイント]({{< relref "./" >}})
+
+本ページは**非公式の古いデータセット**ですので、ご注意ください。
 
 ----
 
@@ -26,7 +25,7 @@ aliases = [
 
 ## Query with SPARQL
 
-{{< yasgui id="madb-lod" endpoint="https://sparql.metadata.moe/madb/query"
+{{< yasgui id="madb-lod-old" endpoint="https://sparql.metadata.moe/madb-20200116/query"
 default-query=`PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX ma: <https://metadata.moe/ns/madb/ma#>
@@ -36,7 +35,7 @@ SELECT * WHERE {
 >}}
 
 ### Examples
-- {{< yasgui-query yasgui-id="madb-lod" title="公開年毎にTVアニメ数を集計する"
+- {{< yasgui-query yasgui-id="madb-lod-old" title="公開年毎にTVアニメ数を集計する"
 query=`PREFIX schema: <http://schema.org/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -50,7 +49,7 @@ GROUP BY (SUBSTR(?startDate, 1, 4) AS ?y)
 ORDER BY DESC(?y)
 ` >}}
 
-- {{< yasgui-query yasgui-id="madb-lod" title="タイトルに「!」「?」を多く含むTVアニメを取得する "
+- {{< yasgui-query yasgui-id="madb-lod-old" title="タイトルに「!」「?」を多く含むTVアニメを取得する "
 query=`PREFIX schema: <http://schema.org/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -67,7 +66,7 @@ ORDER BY DESC(STRLEN(?mark))
 LIMIT 100
 ` >}}
 
-- {{< yasgui-query yasgui-id="madb-lod" title="岡田麿里さん参加作品を取得する"
+- {{< yasgui-query yasgui-id="madb-lod-old" title="岡田麿里さん参加作品を取得する"
 query=`PREFIX schema: <http://schema.org/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>

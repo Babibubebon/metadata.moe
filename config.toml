@@ -22,7 +22,7 @@ name = "とあるSPARQL"
 url = "toaru-sparql/"
 
 [[params.menu]]
-description = "メディア芸術データベース(ベータ版)のデータをRDFに変換したデータセット・SPARQLエンドポイント"
+description = "メディア芸術データベース(ベータ版)のSPARQLエンドポイント"
 name = "メディア芸術データベース LOD"
 url = "project/madb-lod/"
 
