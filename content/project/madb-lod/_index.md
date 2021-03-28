@@ -9,10 +9,10 @@ aliases = [
 ]
 +++
 
-以下で提供されているメディア芸術データベース(ベータ版)のLODデータセットのSPARQLエンドポイントです。  
-[**2021/01/25版**](https://github.com/mediaarts-db/dataset/releases/tag/0.9) を提供しています。
-
+以下で公開されているメディア芸術データベース(ベータ版)のLODデータセットのSPARQLエンドポイントです。  
 - https://github.com/mediaarts-db/dataset
+
+[**2021/01/25版**](https://github.com/mediaarts-db/dataset/releases/tag/0.9) を提供しています。
 
 <div class="bw3 bl ph2">
 
@@ -28,11 +28,11 @@ aliases = [
 default-query=`PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX schema: <https://schema.org/>
-PREFIX madbc: <https://mediaarts-db.bunka.go.jp/data/class/>
-PREFIX madbp: <https://mediaarts-db.bunka.go.jp/data/property/>
-PREFIX madbp-admin: <https://mediaarts-db.bunka.go.jp/data/property-admin/>
-PREFIX madbp-data: <https://mediaarts-db.bunka.go.jp/data/property-data/>
-PREFIX madbp-dev: <https://mediaarts-db.bunka.go.jp/data/property-dev/>
+PREFIX class:    <https://mediaarts-db.bunka.go.jp/data/class/>
+PREFIX ma:       <https://mediaarts-db.bunka.go.jp/data/property/>
+PREFIX maadmin:  <https://mediaarts-db.bunka.go.jp/data/property-admin/>
+PREFIX madbdata: <https://mediaarts-db.bunka.go.jp/data/property-data/>
+PREFIX madev:    <https://mediaarts-db.bunka.go.jp/data/property-dev/>
 SELECT * WHERE {
   ?sub ?pred ?obj .
 } LIMIT 10`
@@ -43,9 +43,9 @@ SELECT * WHERE {
 query=`PREFIX schema: <https://schema.org/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX madbc: <https://mediaarts-db.bunka.go.jp/data/class/>
+PREFIX class: <https://mediaarts-db.bunka.go.jp/data/class/>
 SELECT ?y (COUNT(DISTINCT *) AS ?cnt)  WHERE {
-  ?s a madbc:Collection ;
+  ?s a class:Collection ;
      schema:genre "テレビレギュラーアニメシリーズ" ;
      schema:datePublished ?datePublished .
 }
@@ -57,9 +57,9 @@ ORDER BY DESC(?y)
 query=`PREFIX schema: <https://schema.org/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX madbc: <https://mediaarts-db.bunka.go.jp/data/class/>
+PREFIX class: <https://mediaarts-db.bunka.go.jp/data/class/>
 SELECT ?s ?name ?mark WHERE {
-  ?s a madbc:Collection ;
+  ?s a class:Collection ;
      schema:genre "テレビレギュラーアニメシリーズ" ;
      rdfs:label ?name .
   FILTER(LANG(?name) = "")
@@ -74,11 +74,11 @@ LIMIT 100
 query=`PREFIX schema: <https://schema.org/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX madbc: <https://mediaarts-db.bunka.go.jp/data/class/>
+PREFIX class: <https://mediaarts-db.bunka.go.jp/data/class/>
 SELECT
 	?col ?colName (GROUP_CONCAT(DISTINCT ?role) AS ?roles)
 WHERE {
-  ?col a madbc:Collection ;
+  ?col a class:Collection ;
          schema:genre ?genre ;
          rdfs:label ?colName ;
          ^schema:isPartOf ?item .
@@ -99,7 +99,7 @@ GROUP BY ?col ?colName
 query=`PREFIX schema: <https://schema.org/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX madbc: <https://mediaarts-db.bunka.go.jp/data/class/>
+PREFIX class: <https://mediaarts-db.bunka.go.jp/data/class/>
 # 情報資源分類
 # Ref. https://github.com/mediaarts-db/dataset/blob/ea0d43b555f412b127bb2e8127b7469d6e42fa29/README.md#211-%E6%83%85%E5%A0%B1%E8%B3%87%E6%BA%90%E5%88%86%E9%A1%9E
 SELECT
