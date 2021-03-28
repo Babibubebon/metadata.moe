@@ -28,6 +28,7 @@ jobs:
         run: echo "$SSH_PRIVATE_KEY" > key && chmod 600 key
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          
       - name: Deploy
         run: rsync -rlptgoD --delete -e "ssh -i ./key -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -p ${SSH_PORT}" public/ $SSH_USER@$SSH_HOST:$DEPLOY_PATH
         env:
@@ -35,6 +36,12 @@ jobs:
           SSH_PORT: ${{ secrets.SSH_PORT }}
           DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
           SSH_HOST: ${{ secrets.SSH_HOST }}
+          
+      - name: Purge Cloudflare cache
+        uses: jakejarvis/cloudflare-purge-action@master
+        env:
+          CLOUDFLARE_ZONE: ${{ secrets.CLOUDFLARE_ZONE }}
+          CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN }}
 
       - name: Notify slack success
         if: success()
