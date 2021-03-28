@@ -12,7 +12,7 @@ aliases = [
 以下で公開されているメディア芸術データベース(ベータ版)のLODデータセットのSPARQLエンドポイントです。  
 - https://github.com/mediaarts-db/dataset
 
-[**2021/01/25版**](https://github.com/mediaarts-db/dataset/releases/tag/0.9) を提供しています。
+[**2021/03/22版**](https://github.com/mediaarts-db/dataset/releases/tag/1.0) を提供しています。
 
 <div class="bw3 bl ph2">
 
