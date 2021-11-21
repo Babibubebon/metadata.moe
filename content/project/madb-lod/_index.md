@@ -14,6 +14,15 @@ aliases = [
 
 [**2021/03/22版**](https://github.com/mediaarts-db/dataset/releases/tag/1.0) を提供しています。
 
+<div class="bw3 bl ph2 b--green">
+
+**Notice**
+
+「[メディア芸術データベース・ラボ](https://mediag.bunka.go.jp/madb_lab/) (MADB Lab)」が公開され、SPARQLエンドポイントが提供されています。  
+本エンドポイントは既存利用者のためにしばらく公開は続けますが、今後はMADB Labの利用を推奨します。
+
+</div>
+
 <div class="bw3 bl ph2">
 
 **Note**
@@ -115,6 +124,6 @@ WHERE {
 
 ## ご利用にあたって
 
-- 本サービスは、[文化庁「メディア芸術データベース（ベータ版）」](https://mediaarts-db.bunka.go.jp/)が公開しているデータセットを提供するものです。データセットの内容は改変しておりません(SPARQLサーバやクライアントソフトウェアの制約に起因する場合は、この限りではありません)。
+- 本サービスは、[文化庁「メディア芸術データベース（ベータ版）」](https://mediaarts-db.bunka.go.jp/)が公開しているデータセットを利用しています。データセットの内容は改変しておりません(SPARQLサーバやクライアントソフトウェアの制約に起因する場合は、この限りではありません)。
 - データセットの利用に当たっては、[メディア芸術データベース 利用規約](https://mediaarts-db.bunka.go.jp/user_terms)も併せてお読みください。
 - 本サービスは、個人が独自に提供しているものですので、文化庁にお問い合わせされないようご注意ください。連絡は[こちら](https://babibubebo.org/about/contact/)にお願いします。
