@@ -32,9 +32,9 @@ name = "DBpedia Japanese mirror"
 url = "project/dbpedia-ja/"
 
 [[params.menu]]
-description = "アニメ作品のメタデータを探究する"
-name = "AniMetadata Research"
-url = "project/animetadata/"
+description = "ヲタクコンテンツのメタデータを探究する"
+name = "Otaku Metadata Research"
+url = "project/research/"
 
 [[params.menu]]
 description = "メタデータ好きのためのFediverseインスタンス"

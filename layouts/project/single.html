@@ -14,6 +14,12 @@
   <section id="main" class="mt5">
     <h1 property="schema:name" id="title">{{ .Title }}</h1>
 
+    {{ if .Params.toc }}
+    <aside>
+      {{ .TableOfContents }}
+    </aside>
+    {{ end }}
+
     <article property="schema:articleBody" id="content" class="lh-copy">
       {{ .Content }}
     </article>

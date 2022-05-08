@@ -1,19 +1,22 @@
 +++
-title = "AniMetadata Research"
+title = "Otaku Metadata Research"
 date = 2020-10-12T04:04:00+09:00
-description = "アニメ作品のメタデータの情報源"
+description = "ヲタクコンテンツのメタデータの情報源"
 tags = []
 categories = ["Anime"]
-download_url = "http://github.com/USERNAME/PROJECTNAME"
 project_description = "DESC"
 project_name = "PROJECTNAME"
 project_url = "URL"
 release_date = "DATE"
 version = "0.0"
+toc = true
+aliases = [
+    "/project/animetadata/"
+]
 +++
 
 
-## Resources
+## アニメ {#animetadata}
 アニメ関係の情報を提供しているWebサイト。分類はテキトーです。
 
 ### 公共系・業界団体等
@@ -114,5 +117,27 @@ version = "0.0"
 - OntologySummit2014 Hackathon ReferenceDataForAnimeAndManga:
     - http://ontolog.cim3.net/wiki/OntologySummit2014_Hackathon_ReferenceDataForAnimeAndManga.html
     - https://github.com/ailev/anird
+
+-----
+
+## 美少女ゲーム(エロゲ, Eroge, びしょゲー) {#erogametadata}
+整理中……
+
+- Moepedia: https://moepedia.net/
+    - 2022年4月1日に正式オープン、ソフ倫が運営。採録対象はIPPA、JCRC、EOCS(ソフ倫)で審査を受けた美少女ゲーム。
+    - 「実況動画配信の可否」「歌ってみた等での楽曲使用の可否」など、二次利用に関する許諾条件を記述する項目あり
+- ゲーム博物館 (コムショップ) - アダルトPCゲーム: [https://www.comshop.ne.jp/g-haku/list?cat=アダルトPCゲーム](https://www.comshop.ne.jp/g-haku/list?cat=%E3%82%A2%E3%83%80%E3%83%AB%E3%83%88PC%E3%82%B2%E3%83%BC%E3%83%A0)
+- 萌えゲーアワード: https://moe-gameaward.com/
+- ErogameScape -エロゲー批評空間-: http://erogamescape.dyndns.org/
+    - ER図などDBの内部仕様が公開されている: http://erogamescape.dyndns.org/~ap2/ero/toukei_kaiseki/sql_for_erogamer_tablelist.php
+    - SQLで叩ける: http://erogamescape.dyndns.org/~ap2/ero/toukei_kaiseki/sql_for_erogamer_index.php
+- エロゲーム特典.com: http://www.erogame-tokuten.com/
+- ErogeTrailers: http://erogetrailers.com/
+    - 2022年2月頃からアクセス不能になった ⇒ Wayback Machine: https://web.archive.org/web/http://erogetrailers.com/
+    - Web APIがあった: http://ketsuage.seesaa.net/article/263754550.html
+- Eroge Movie Database / エロゲムービーデータベース: https://seesaawiki.jp/game-movie/
+- VNDB: The Visual Novel Database: https://vndb.org/
+- VNStat: https://vnstat.net/
+
 
 [^1]: 海外のサイトのうち、いわゆるフェアユースを明らかに超えるような、違法なコンテンツ共有を主たる目的としたサイトは除いています。
