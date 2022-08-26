@@ -30,6 +30,7 @@ aliases = [
 - 日本映画情報システム: https://www.japanese-cinema-db.jp/
 - 映連データベース: http://db.eiren.org/
 - 訪れてみたい日本のアニメ聖地88: https://animetourism88.com/ja/88AnimeSpot
+- アニメ大全: https://db.animedb.jp/
 
 ### 映画会社系
 - 東宝 資料室: https://www.toho.co.jp/library/
@@ -78,6 +79,8 @@ aliases = [
 - anime mokuroku: https://www.animemokuroku.com/
     - スタッフ情報のデータソースは、恐らく[アニメスタッフデータベース](https://seesaawiki.jp/w/radioi_34/)
     - ジャンルのデータソースは、Wikipedia日本語版の[Infobox animanga](https://ja.wikipedia.org/wiki/Template:Infobox_animanga)の「ジャンル」
+    - 2022年8月15日をもってサービスを終了
+      https://twitter.com/animemokuroku/status/1553466077199249408
 - 類似アニメ検索: http://ruijianime.com/
 
 #### 海外[^1]
@@ -95,7 +98,7 @@ aliases = [
 - Simkl Anime: https://simkl.com/anime/
     - API: https://simkl.docs.apiary.io/#
 - VGMdb: https://vgmdb.net/
-- aniSearch: https://www.anisearch.com/ , https://www.anisearch.de/
+- aniSearch: https://www.anisearch.com/ , https://www.anisearch.de/ , https://www.anisearch.jp/
 - TheTVDB: https://thetvdb.com/
 - The Movie Database: https://www.themoviedb.org/
 
