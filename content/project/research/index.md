@@ -49,7 +49,9 @@ aliases = [
 - allcinema: https://www.allcinema.net/
 - KINENOTE: http://www.kinenote.com/
 - Yahoo!映画: https://movies.yahoo.co.jp/
-- Filmarks映画: https://filmarks.com/
+- Filmarks:
+    - 映画: https://filmarks.com/
+    - アニメ: https://filmarks.com/animes
 - MOVIE WALKER: https://movie.walkerplus.com/
 - あにこれ: https://www.anikore.jp/
 - 作品データベース: https://sakuhindb.com/
