@@ -99,6 +99,7 @@ aliases = [
     - API: https://simkl.docs.apiary.io/#
 - VGMdb: https://vgmdb.net/
 - aniSearch: https://www.anisearch.com/ , https://www.anisearch.de/ , https://www.anisearch.jp/
+- Anime Characters Database (ACDB): https://www.animecharactersdatabase.com/
 - TheTVDB: https://thetvdb.com/
 - The Movie Database: https://www.themoviedb.org/
 
@@ -120,6 +121,10 @@ aliases = [
 - OntologySummit2014 Hackathon ReferenceDataForAnimeAndManga:
     - http://ontolog.cim3.net/wiki/OntologySummit2014_Hackathon_ReferenceDataForAnimeAndManga.html
     - https://github.com/ailev/anird
+- The Japanese Visual Media Graph: https://mediagraph.link/
+    - 様々なコミュニティ(VNDB, ANimeClick, ACDB, メディア芸術データベース(ベータ版), Wikidata, AniDB)のデータを統合したデータセットを作るプロジェクト
+    - project blog: https://jvmg.iuk.hdm-stuttgart.de/
+        - このあたりの記事からデータが見られる: [Milestone: Public access to the knowledge graph](https://jvmg.iuk.hdm-stuttgart.de/2021/10/13/milestone-public-access-to-the-knowledge-graph/)
 
 -----
 
