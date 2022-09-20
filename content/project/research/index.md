@@ -112,6 +112,10 @@ aliases = [
     - アイドルマスターシリーズ
 - PrismDB: https://prismdb.takanakahiko.me/
     - プリティーシリーズ
+- LuciaDB: https://github.com/Assault-Lily/LuciaDB
+    - アサルトリリィ
+    - Lemonade: https://lemonade.assaultlily.com/
+        - 公認になったらしい、すごい: [アサルトリリィ関連情報を取り扱うファンサイト「Lemonade」が公認化！](https://www.assaultlily.com/news/1405.html/)
 - Between Our Worlds: https://betweenourworlds.org/
     - アニメ作品全般のLODデータセットとして公開しているっぽい: https://betweenourworlds.org/data/
         - Kitsu APIのデータを使っている？
