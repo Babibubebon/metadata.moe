@@ -12,34 +12,46 @@ description = "メタデータを愛でる人々のためのWebサイトです�
 titleLogo = "<img src=\"/img/logo.svg\" width=\"48\" height=\"48\">"
 
 [[params.menu]]
-description = "アニメ作品のデータベース "
+description = "アニメ作品のデータベース"
 name = "あにむめも"
 url = "https://animedb.moe/"
+category = "dataset"
 
 [[params.menu]]
 description = "とあるシリーズのデータセットとSPARQLエンドポイント"
 name = "とあるSPARQL"
 url = "toaru-sparql/"
+category = "dataset"
 
 [[params.menu]]
-description = "メディア芸術データベース(ベータ版)のSPARQLエンドポイント"
+description = "メディア芸術データベース(ベータ版)のLODデータセットとSPARQLエンドポイント"
 name = "メディア芸術データベース LOD"
 url = "project/madb-lod/"
+category = "dataset"
 
 [[params.menu]]
 description = "DBpedia JapaneseのSPARQLエンドポイント(Apache Jena Fuseki)"
 name = "DBpedia Japanese mirror"
 url = "project/dbpedia-ja/"
+category = "dataset"
 
 [[params.menu]]
 description = "ヲタクコンテンツのメタデータを探究する"
 name = "Otaku Metadata Research"
 url = "project/research/"
+category = "project"
 
 [[params.menu]]
-description = "メタデータ好きのためのFediverseインスタンス"
+description = "問い合わせ言語SPARQLに萌える話"
+name = "SPARQL萌え"
+url = "sparql/"
+category = "project"
+
+[[params.menu]]
+description = "メタデータに萌える人々のためのFediverseインスタンス"
 name = "Social.Metadata.Moe"
-url = "https://social.metadata.moe/"
+url = "project/fediverse/"
+category = "project"
 
 [privacy]
 [privacy.googleAnalytics]

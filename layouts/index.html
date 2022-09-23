@@ -31,11 +31,26 @@
       {{ end -}}
 
       <section>
+        <h2 class="f2">Datasets</h2>
+        <ul class="list pl3">
+          <!-- pages -->
+          <!-- prettier-ignore -->
+          {{ range where .Site.Params.menu "category" "dataset" }}
+          <li class="mv3">
+            <a class="f3 b pa1 black" href="{{ .url }}">{{ .name }}</a>
+            <p>{{ .description }}</p>
+          </li>
+          <!-- prettier-ignore -->
+          {{ end }}
+        </ul>
+      </section>
+
+      <section>
         <h2 class="f2">Projects</h2>
         <ul class="list pl3">
           <!-- pages -->
           <!-- prettier-ignore -->
-          {{ range .Site.Params.menu }}
+          {{ range where .Site.Params.menu "category" "project" }}
           <li class="mv3">
             <a class="f3 b pa1 black" href="{{ .url }}">{{ .name }}</a>
             <p>{{ .description }}</p>
