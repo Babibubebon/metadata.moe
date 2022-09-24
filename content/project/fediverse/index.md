@@ -13,7 +13,7 @@ toc = false
 
 ユーザ登録を開放していますので、ご興味のある方はご参加ください ⇒ [**登録はこちら**](https://social.metadata.moe/registration)
 
-## RSS配信ボット
+## RSS配信ボット {#bots}
 
 未収載(visibility=unlisted[^1])で投稿していますので、フォローしてください。
 
@@ -30,7 +30,7 @@ toc = false
 - dアニメストア お知らせ 非公式  
   [@danimestore](https://social.metadata.moe/danimestore)
 
-### サービス稼働状況
+### サービス稼働状況 {#service-status}
 
 ゆるーく運用しているので、たまに落ちてるかもしれません。繋がらないときは以下をご確認ください。
 
