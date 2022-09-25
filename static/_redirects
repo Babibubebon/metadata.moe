@@ -1,5 +1,5 @@
 /.well-known/void /void.ttl 302
+/ns/madb/ma /ns/madb/ma.ttl 302
 /toaru-sparql/bib/* /ns/toaru.ttl 302
 /toaru-sparql/class/* /ns/toaru.ttl 302
 /toaru-sparql/elements/* /ns/toaru.ttl 302
-/ns/madb/ma /ns/madb/ma.ttl 302
