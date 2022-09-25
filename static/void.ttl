@@ -6,7 +6,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix : <https://metadata.moe/void.ttl#> .
 
-<https://metadata.moe/void.ttl> a void:DatasetDescription ;
+<> a void:DatasetDescription ;
   dcterms:title "A VoID description of metadata.moe datasets"@en ;
   dcterms:creator <https://babibubebo.org/about/profile/#babibubebon> .
 
@@ -19,7 +19,7 @@
   dcterms:modified "2018-12-08"^^xsd:date ;
   dcterms:license <https://creativecommons.org/licenses/by-nc/4.0/> ;
   foaf:homepage <https://metadata.moe/toaru-sparql/> ;
-  void:sparqlEndpoint <https://metadata.moe/sparql/toaru/query> ;
+  void:sparqlEndpoint <https://sparql.metadata.moe/toaru/query> ;
   void:triples 26899 .
 
 :MADBLOD a void:Dataset ;
@@ -32,9 +32,7 @@
   dcterms:modified "2020-01-21"^^xsd:date ;
   dcterms:license <https://creativecommons.org/licenses/by/4.0/>, <https://mediaarts-db.bunka.go.jp/user_terms> ;
   foaf:homepage <https://metadata.moe/project/madb-lod/> ;
-  foaf:page <https://metadata.moe/project/madb-lod/dumps/> ;
-  void:dataDump <https://metadata.moe/project/madb-lod/dumps/madb_latest.nt.bz2> ;
-  void:sparqlEndpoint <https://metadata.moe/sparql/madb/query> ;
+  void:sparqlEndpoint <https://sparql.metadata.moe/madb/query> ;
   void:triples 19341483 .
 
 :BLab a foaf:Organization ;
