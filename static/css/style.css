@@ -32,3 +32,22 @@ code {
 .footnotes {
   font-size: 80%;
 }
+
+table {
+  border-spacing: 0;
+  border-top: #000 solid 2px;
+  border-bottom: #000 solid 2px;
+}
+
+table th {
+  text-align: center !important;
+}
+
+table th, table td {
+  padding: .25rem 1rem;
+  border-bottom: #000 solid 1px;
+}
+
+table tr:last-child td {
+  border-bottom: none;
+}
