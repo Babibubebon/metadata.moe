@@ -19,7 +19,7 @@ categories = ["SPARQL"]
 [メディア芸術データベース (ベータ版)](https://mediaarts-db.bunka.go.jp/)が試験的に公開している[Web API](https://mediaarts-db.bunka.go.jp/about#anc02)から取得したデータを RDF へ変換して作成したデータセットです。
 
 - [変換スクリプト](https://github.com/Babibubebon/MADB-LOD)
-- [RDF データダンプ](./dumps/)
+- [RDF データダンプ](https://github.com/Babibubebon/MADB-LOD/releases)
 
 以下は2020/01/16時点で取得したデータを提供しています。
 
@@ -35,6 +35,7 @@ SELECT * WHERE {
 >}}
 
 ### Examples
+
 - {{< yasgui-query yasgui-id="madb-lod-old" title="公開年毎にTVアニメ数を集計する"
 query=`PREFIX schema: <http://schema.org/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
