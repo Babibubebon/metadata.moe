@@ -33,21 +33,57 @@ code {
   font-size: 80%;
 }
 
-table {
+/**
+ * Breadcrumb
+ */
+ nav.breadcrumb {
+  padding: 0.8em 0;
+}
+
+nav.breadcrumb ol {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+nav.breadcrumb li {
+  display: inline;
+}
+
+nav.breadcrumb li::before {
+  display: inline-block;
+  margin: 0 0.4em 0 0.2em;
+  transform: rotate(15deg);
+  border-right: 0.1em solid currentcolor;
+  height: 0.8em;
+  content: "";
+}
+
+nav.breadcrumb [aria-current="page"] {
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+
+/**
+ * Default Table
+ */
+table[class=""] {
   border-spacing: 0;
   border-top: #000 solid 2px;
   border-bottom: #000 solid 2px;
 }
 
-table th {
+table[class=""] th {
   text-align: center !important;
 }
 
-table th, table td {
+table[class=""] th, table[class=""] td {
   padding: .25rem 1rem;
   border-bottom: #000 solid 1px;
 }
 
-table tr:last-child td {
+table[class=""] tr:last-child td {
   border-bottom: none;
 }

@@ -26,7 +26,7 @@ category = "dataset"
 [[params.menu]]
 description = "メディア芸術データベース(ベータ版)のLODデータセットとSPARQLエンドポイント"
 name = "メディア芸術データベース LOD"
-url = "project/madb-lod/"
+url = "project/madb/lod/"
 category = "dataset"
 
 [[params.menu]]
@@ -51,6 +51,12 @@ category = "project"
 description = "メタデータに萌える人々のためのFediverseインスタンス"
 name = "Social.Metadata.Moe"
 url = "project/fediverse/"
+category = "project"
+
+[[params.menu]]
+name = "MADB 地下実験室"
+description = "メディア芸術データベースで遊ぶ"
+url = "project/madb/"
 category = "project"
 
 [privacy]

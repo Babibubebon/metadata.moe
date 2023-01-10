@@ -4,6 +4,7 @@ date = 2020-10-07T02:03:54+09:00
 description = "メディア芸術データベース(ベータ版)をLOD化したデータセット"
 tags = []
 categories = ["SPARQL"]
+aliases = ["/project/madb-lod/old/"]
 +++
 
 **2021/01/25** メディア芸術データベース(ベータ版)のLODデータセットが公式に公開されました。

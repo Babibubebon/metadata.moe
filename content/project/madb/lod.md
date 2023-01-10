@@ -5,12 +5,13 @@ description = "メディア芸術データベース(ベータ版)のSPARQLエン
 tags = []
 categories = ["SPARQL"]
 aliases = [
-    '/madb-lod/'
+    '/project/madb-lod/'
 ]
 +++
 
-以下で公開されているメディア芸術データベース(ベータ版)のLODデータセットのSPARQLエンドポイントです。  
-- https://github.com/mediaarts-db/dataset
+以下で公開されているメディア芸術データベース(ベータ版)のLODデータセットのSPARQLエンドポイントです。
+
+- <https://github.com/mediaarts-db/dataset>
 
 [**2021/03/22版**](https://github.com/mediaarts-db/dataset/releases/tag/1.0) を提供しています。
 
@@ -18,7 +19,7 @@ aliases = [
 
 **Notice**
 
-「[メディア芸術データベース・ラボ](https://mediag.bunka.go.jp/madb_lab/) (MADB Lab)」が公開され、SPARQLエンドポイントが提供されています。  
+「[メディア芸術データベース・ラボ](https://mediag.bunka.go.jp/madb_lab/) (MADB Lab)」でSPARQLエンドポイントが提供されるようになったため、お役御免となりました。
 本エンドポイントは既存利用者のためにしばらく公開は続けますが、今後はMADB Labの利用を推奨します。
 
 </div>
@@ -48,6 +49,7 @@ SELECT * WHERE {
 >}}
 
 ### Examples
+
 - {{< yasgui-query yasgui-id="madb-lod" title="公開年毎にTVアニメシリーズ数を集計する"
 query=`PREFIX schema: <https://schema.org/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -85,7 +87,7 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX class: <https://mediaarts-db.bunka.go.jp/data/class/>
 SELECT
-	?col ?colName (GROUP_CONCAT(DISTINCT ?role) AS ?roles)
+ ?col ?colName (GROUP_CONCAT(DISTINCT ?role) AS ?roles)
 WHERE {
   ?col a class:Collection ;
          schema:genre ?genre ;
@@ -93,7 +95,7 @@ WHERE {
          ^schema:isPartOf ?item .
   VALUES ?genre {"テレビレギュラーアニメシリーズ" "劇場版アニメシリーズ" "テレビ単発（スペシャル）アニメシリーズ"}
   {
-  	?col schema:contributor ?contributers .
+   ?col schema:contributor ?contributers .
   } UNION {
     ?item schema:contributor ?contributers .
   }
@@ -109,13 +111,16 @@ query=`PREFIX schema: <https://schema.org/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX class: <https://mediaarts-db.bunka.go.jp/data/class/>
+
 # 情報資源分類
-# Ref. https://github.com/mediaarts-db/dataset/blob/ea0d43b555f412b127bb2e8127b7469d6e42fa29/README.md#211-%E6%83%85%E5%A0%B1%E8%B3%87%E6%BA%90%E5%88%86%E9%A1%9E
+
+# Ref. <https://github.com/mediaarts-db/dataset/blob/ea0d43b555f412b127bb2e8127b7469d6e42fa29/README.md#211-%E6%83%85%E5%A0%B1%E8%B3%87%E6%BA%90%E5%88%86%E9%A1%9E>
+
 SELECT
-	DISTINCT (?additionalType AS ?分野) (?class AS ?大分類) (?genre AS ?小分類)
+ DISTINCT (?additionalType AS ?分野) (?class AS ?大分類) (?genre AS ?小分類)
 WHERE {
   ?col a ?class;
-  		 schema:additionalType ?additionalType ;
+     schema:additionalType ?additionalType ;
          schema:genre ?genre .
 }
 ` >}}
