@@ -241,5 +241,5 @@ categories = ["MADB"]
 <script src="https://cdn.jsdelivr.net/npm/vue@2.7.11"></script>
 <script src="/js/madb/webapi2sparql.js"></script>
 
-[^1]: API仕様書 https://mediaarts-db.bunka.go.jp/resources/pdf/mediaartsdb_webapi_documents.pdf
+[^1]: API仕様書 <https://mediaarts-db.bunka.go.jp/resources/pdf/mediaartsdb_webapi_documents.pdf>
 [^2]: 全文検索やソートの実装の差異、RDFのデータセットへ変換される過程で生じたと思われるデータ上の差異などが存在します。
