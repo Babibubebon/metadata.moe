@@ -7,7 +7,7 @@ categories = ["MADB"]
 
 [メディア芸術データベース（ベータ版）WebAPI](https://mediaarts-db.bunka.go.jp/about#anc03)[^1]に対するリクエストを、ほぼ同等[^2]の検索結果が得られる[MADB Lab SPARQLクエリサービス](https://mediag.bunka.go.jp/madb_lab/lod/sparql/)の**SPARQLクエリ**へ変換します。
 
-対応する仕様のバージョンは以下のとおりです。
+対応するWebAPI仕様/データセットのバージョンは以下のとおりです。
 
 - WebAPI: [No.5 2022/02/17](https://mediaarts-db.bunka.go.jp/resources/pdf/mediaartsdb_webapi_documents.pdf)
 - SPARQLクエリ: [データセット 2022-10-26](https://mediag.bunka.go.jp/madb_lab/lod/download/)
@@ -232,7 +232,7 @@ categories = ["MADB"]
     </section>
     <section>
         <h2>SPARQLクエリ</h2>
-        <textarea v-model="sparqlQuery" class="f5 w-100 pa2 code" rows="20"></textarea>
+        <textarea v-model="sparqlQuery" class="f5 w-100 pa2 code" rows="20" spellcheck="false" translate="no"></textarea>
         <a class="f6 b link dim br1 ph3 pv2 mb2 dib white bg-dark-blue" :href="sparqlMadbLabUrl" target="_blank">MADB Labで実行</a>
     </section>
 </form>
