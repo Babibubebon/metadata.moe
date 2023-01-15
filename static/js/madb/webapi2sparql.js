@@ -1,3 +1,10 @@
+const fieldIdToCode = {
+    'manga': 'cm',
+    'animation': 'an',
+    'game': 'gm',
+    'mediaart': 'ma',
+    'collection': 'co',
+}
 const fieldIdToAdditionalType = {
     'manga': 'class:CM',
     'animation': 'class:AN',
@@ -72,10 +79,8 @@ function addIndent(text, level = 1) {
     return spaces + text
 }
 
-const app = new Vue({
-    el: '#app',
-    delimiters: ['<<', '>>'],
-    data: {
+const app = Vue.createApp({
+    data: () => ({
         apireq: {
             'fieldId': '',
             'categoryId': '',
@@ -99,8 +104,44 @@ const app = new Vue({
             'keywords': '',
             'inLanguage': '',
         }
+    }),
+    methods: {
+        onChangeFieldId: function () {
+            if (!this.apireq.fieldId) {
+                return
+            }
+            const selectedFieldCode = fieldIdToCode[this.apireq.fieldId]
+            console.log(selectedFieldCode)
+            if (this.apireq.categoryId.indexOf(selectedFieldCode) === -1) {
+                this.apireq.categoryId = '';
+            }
+            if (this.apireq.subcategoryId.indexOf(selectedFieldCode) === -1) {
+                this.apireq.subcategoryId = '';
+            }
+        }
     },
     computed: {
+        categoryIdOptions: function () {
+            const options = [
+                'cm-item',
+                'cm-col',
+                'an-item',
+                'an-col',
+                'gm-item',
+                'gm-col',
+                'ma-item',
+                'ma-col',
+                'co-curate',
+            ]
+            return options.filter(v => {
+                return !this.apireq.fieldId || v.startsWith(fieldIdToCode[this.apireq.fieldId])
+            })
+        },
+        subcategoryIdOptions: function () {
+            return Object.keys(subcategoryIdToClass).filter(v => {
+                return !this.apireq.fieldId || v.startsWith(fieldIdToCode[this.apireq.fieldId])
+            })
+        },
         webApiQuery: function () {
             const reqUrl = new URL('https://mediaarts-db.bunka.go.jp/api/search')
             for (let key of Object.keys(this.apireq)) {
@@ -122,6 +163,7 @@ const app = new Vue({
                 'FILTER(!STRSTARTS(?identifier, "S"))'
             ]
             const optionalPatterns = [
+                ['?s', 'schema:genre', '?genre'],
                 ['?s', 'schema:name', '?title']
             ]
             const optionalFilters = []
@@ -212,7 +254,7 @@ SERVICE neptune-fts:search {
                 patternString += addIndent(triple.join(' ')) + ' .\n'
             })
             patternString = patternString.trimEnd('\n')
-            filterString = '\n'
+            let filterString = '\n'
             filters.forEach(filter => {
                 filterString += addIndent(filter) + '\n'
             })
@@ -226,7 +268,7 @@ SERVICE neptune-fts:search {
                 optionalPatternString += addIndent(triple.join(' '), 2) + ' .\n'
             })
             optionalPatternString = optionalPatternString.trimEnd('\n')
-            optionalFilterString = ''
+            let optionalFilterString = ''
             optionalFilters.forEach(filter => {
                 optionalFilterString += addIndent(filter, 2) + '\n'
             })
@@ -241,7 +283,7 @@ PREFIX schema: <https://schema.org/>
 PREFIX neptune-fts: <http://aws.amazon.com/neptune/vocab/v01/services/fts#>
 
 SELECT
-    DISTINCT ?s ?title
+    DISTINCT ?s ?genre ?title
 WHERE {
 ${patternString}${filterString}
 ${optionalPatternString}
@@ -252,3 +294,5 @@ ${limitClause}`
         }
     }
 })
+app.config.compilerOptions.delimiters = ['${', '}']
+app.mount('#app')

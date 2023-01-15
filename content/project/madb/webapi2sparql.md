@@ -21,7 +21,7 @@ categories = ["MADB"]
                 <label for="fieldId" class="f6 b db mb2">分野ID <span class="normal black-60">(optional)</span></label>
             </div>
             <div class="fl w-60">
-                <select id="fieldId" v-model="apireq.fieldId" class="ba b--black-20 pa2 mb2 db w-100">
+                <select id="fieldId" v-model="apireq.fieldId" @change="onChangeFieldId" class="ba b--black-20 pa2 mb2 db w-100">
                     <option value=""></option>
                     <option value="manga">manga</option>
                     <option value="animation">animation</option>
@@ -38,15 +38,7 @@ categories = ["MADB"]
             <div class="fl w-60">
                 <select id="categoryId" v-model="apireq.categoryId" class="ba b--black-20 pa2 mb2 db w-100">
                     <option value=""></option>
-                    <option value="cm-item">cm-item</option>
-                    <option value="cm-col ">cm-col </option>
-                    <option value="an-item">an-item</option>
-                    <option value="an-col">an-col</option>
-                    <option value="gm-item">gm-item</option>
-                    <option value="gm-col">gm-col</option>
-                    <option value="ma-item">ma-item</option>
-                    <option value="ma-col">ma-col</option>
-                    <option value="co-curate">co-curate</option>
+                    <option v-for="option in categoryIdOptions" :value="option">${ option }</option>
                 </select>
             </div>
         </div>
@@ -57,24 +49,7 @@ categories = ["MADB"]
             <div class="fl w-60">
                 <select id="subcategoryId" v-model="apireq.subcategoryId" class="ba b--black-20 pa2 mb2 db w-100">
                     <option value=""></option>
-                    <option value="cm101">cm101</option>
-                    <option value="cm102">cm102</option>
-                    <option value="cm103">cm103</option>
-                    <option value="cm104">cm104</option>
-                    <option value="cm105">cm105</option>
-                    <option value="cm106">cm106</option>
-                    <option value="an201">an201</option>
-                    <option value="an202">an202</option>
-                    <option value="an205">an205</option>
-                    <option value="an207">an207</option>
-                    <option value="an208">an208</option>
-                    <option value="an210">an210</option>
-                    <option value="gm301">gm301</option>
-                    <option value="gm305">gm305</option>
-                    <option value="gm306">gm306</option>
-                    <option value="ma401">ma401</option>
-                    <option value="ma408">ma408</option>
-                    <option value="co504">co504</option>
+                    <option v-for="option in subcategoryIdOptions" :value="option">${ option }</option>
                 </select>
             </div>
         </div>
@@ -110,7 +85,7 @@ categories = ["MADB"]
                 <label for="offset" class="f6 b db mb2">取得開始件数 <span class="normal black-60">(optional)</span></label>
             </div>
             <div class="fl w-60">
-                <input id="offset" v-model="apireq.offset" class="input-reset ba b--black-20 pa2 mb2 db w-100" type="number" min="0" max="1000" value="0">
+                <input id="offset" v-model="apireq.offset" class="input-reset ba b--black-20 pa2 mb2 db w-100" type="number" min="0" max="1000">
             </div>
         </div>
         <div class="measure cf flex items-center">
@@ -118,7 +93,7 @@ categories = ["MADB"]
                 <label for="limit" class="f6 b db mb2">最大取得件数 <span class="normal black-60">(optional)</span></label>
             </div>
             <div class="fl w-60">
-                <input id="limit" v-model="apireq.limit" class="input-reset ba b--black-20 pa2 mb2 db w-100" type="number" min="1" max="1000" value="20">
+                <input id="limit" v-model="apireq.limit" class="input-reset ba b--black-20 pa2 mb2 db w-100" type="number" min="1" max="1000">
             </div>
         </div>
         <div class="measure cf flex items-center">
@@ -228,7 +203,7 @@ categories = ["MADB"]
     </section>
     <section>
         <h2>WebAPIリクエストURL</h2>
-        <a :href="webApiQuery" target="_blank"><< webApiQuery >></a>
+        <a :href="webApiQuery" target="_blank">${ webApiQuery }</a>
     </section>
     <section>
         <h2>SPARQLクエリ</h2>
@@ -238,8 +213,8 @@ categories = ["MADB"]
 </form>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/vue@2.7.11"></script>
-<script src="/js/madb/webapi2sparql.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@3.2.45/dist/vue.global.prod.js"></script>
+<script src="/js/madb/webapi2sparql.js" type="module"></script>
 
 [^1]: API仕様書 <https://mediaarts-db.bunka.go.jp/resources/pdf/mediaartsdb_webapi_documents.pdf>
 [^2]: 全文検索やソートの実装の差異、RDFのデータセットへ変換される過程で生じたと思われるデータ上の差異などが存在します。
