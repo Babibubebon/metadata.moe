@@ -1,17 +1,22 @@
-<div>
-  {{ with .Get "endpoint" }}
-  <p>
-    Endpoint: <code>{{ . }}</code>
-  </p>
-  {{ end }}
-  <div id="yasgui-{{ .Get "id" }}"></div>
-</div>
+<div id="yasgui-{{ .Get "id" }}"></div>
+
+{{ $endpointOptions := slice }}
+{{ range split (.Get "endpoint-options") "," }}
+{{ if . }}
+{{ $endpointOptions = $endpointOptions | append (dict "endpoint" . ) }}
+{{ end }}
+{{ end }}
 
 <script>
   yasgui["{{ .Get "id" }}"] = new Yasgui(document.getElementById("yasgui-{{ .Get "id" }}"), {
     requestConfig: {{ dict "endpoint" (.Get "endpoint") }},
     persistenceId: "{{ .Get "id" }}",
     copyEndpointOnNewTab: false,
+    endpointCatalogueOptions: {
+      getData: function () {
+        return {{ $endpointOptions }}
+      }
+    },
     yasqe: {
       {{ with .Get "default-query" }}
       value: {{ . }}
@@ -19,7 +24,7 @@
     },
   });
 </script>
-{{ if .Get "endpoint" }}
+{{ if and (.Get "endpoint") (eq (len $endpointOptions) 0) }}
 <style>
   #yasgui-{{ .Get "id" }} .yasgui .autocompleteWrapper {
     display: none !important;

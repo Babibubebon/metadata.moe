@@ -9,11 +9,7 @@ aliases = [
 ]
 +++
 
-以下で公開されているメディア芸術データベース(ベータ版)のLODデータセットのSPARQLエンドポイントです。
-
-- <https://github.com/mediaarts-db/dataset>
-
-[**2021/03/22版**](https://github.com/mediaarts-db/dataset/releases/tag/1.0) を提供しています。
+メディア芸術データベース(ベータ版)のLODデータセット[^1]のSPARQLエンドポイントです。
 
 <div class="bw3 bl ph2 b--green">
 
@@ -34,7 +30,10 @@ aliases = [
 
 ## Query with SPARQL
 
-{{< yasgui id="madb-lod" endpoint="https://sparql.metadata.moe/madb/query"
+Endpoint: `https://sparql.metadata.moe/madb/query` ([**2022/02/17版**](https://github.com/mediaarts-db/dataset/tree/76f7813a6d1f22eaca6683ba4793f5c19464d181))
+
+{{< yasgui id="madb-lod"
+    endpoint="https://sparql.metadata.moe/madb/query"
 default-query=`PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX schema: <https://schema.org/>
@@ -132,3 +131,6 @@ WHERE {
 - 本サービスは、[文化庁「メディア芸術データベース（ベータ版）」](https://mediaarts-db.bunka.go.jp/)が公開しているデータセットを利用しています。データセットの内容は改変しておりません(SPARQLサーバやクライアントソフトウェアの制約に起因する場合は、この限りではありません)。
 - データセットの利用に当たっては、[メディア芸術データベース 利用規約](https://mediaarts-db.bunka.go.jp/user_terms)も併せてお読みください。
 - 本サービスは、個人が独自に提供しているものですので、文化庁にお問い合わせされないようご注意ください。連絡は[こちら](https://babibubebo.org/about/contact/)にお願いします。
+
+
+[^1]: <https://github.com/mediaarts-db/dataset>

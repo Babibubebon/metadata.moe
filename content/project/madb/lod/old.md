@@ -13,7 +13,7 @@ aliases = ["/project/madb-lod/old/"]
 
 - [メディア芸術データベース SPARQLエンドポイント]({{< relref "./" >}})
 
-本ページは**非公式の古いデータセット**ですので、ご注意ください。
+本ページは**非公式に生成した古いデータセット**ですので、ご注意ください。
 
 ----
 
@@ -25,6 +25,8 @@ aliases = ["/project/madb-lod/old/"]
 以下は2020/01/16時点で取得したデータを提供しています。
 
 ## Query with SPARQL
+
+Endpoint: `https://sparql.metadata.moe/madb-20200116/query`
 
 {{< yasgui id="madb-lod-old" endpoint="https://sparql.metadata.moe/madb-20200116/query"
 default-query=`PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
