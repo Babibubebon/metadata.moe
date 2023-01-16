@@ -68,7 +68,7 @@ query=`SELECT *
   }
 }` >}}
 
-- {{< yasgui-query yasgui-id="madb-lod-diff" title="分野別リソース数"
+- {{< yasgui-query yasgui-id="madb-lod-diff" title="分野別エンティティ数"
 query=`PREFIX schema: <https://schema.org/>
 
 SELECT ?normalizedAdditionalType ?version ?cnt
@@ -270,6 +270,23 @@ GROUP BY ?genre
 ORDER BY ?genre
 ` >}}
 
+- {{< yasgui-query yasgui-id="madb-lod-diff" title="エンティティのジャンル別増分"
+query=`PREFIX schema: <https://schema.org/>
+
+SELECT ?genre (COUNT(*) AS ?cnt)
+{
+  ?s schema:identifier ?identifier ;
+     schema:genre ?genre .
+  MINUS {
+    SERVICE <https://sparql.metadata.moe/madb-20210125/query> {
+      SELECT * WHERE {
+        ?s schema:identifier ?identifier .
+      }
+    }
+  }
+}
+GROUP BY ?genre
+ORDER BY DESC(COUNT(*))` >}}
 
 - {{< yasgui-query yasgui-id="madb-lod-diff" title="マンガ分野: 所蔵館毎のアイテム数"
 query=`PREFIX schema: <https://schema.org/>
