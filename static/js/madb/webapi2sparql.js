@@ -44,7 +44,7 @@ const subcategoryIdToClass = {
     'co504': 'class:Agent',
 }
 const sortToOrderByTerm = {
-    'title': 'schema:name',
+    'title': 'rdfs:label',
     'date': 'schema:datePublished',
 }
 const fulltextSearchFieldToTerm = {
@@ -138,8 +138,15 @@ const app = Vue.createApp({
             })
         },
         subcategoryIdOptions: function () {
+            let code = null
+            if (this.apireq.fieldId) {
+                code = fieldIdToCode[this.apireq.fieldId]
+            }
+            if (this.apireq.categoryId) {
+                code = this.apireq.categoryId.substring(0, 2)
+            }
             return Object.keys(subcategoryIdToClass).filter(v => {
-                return !this.apireq.fieldId || v.startsWith(fieldIdToCode[this.apireq.fieldId])
+                return !code || v.startsWith(code)
             })
         },
         webApiQuery: function () {
@@ -164,7 +171,7 @@ const app = Vue.createApp({
             ]
             const optionalPatterns = [
                 ['?s', 'schema:genre', '?genre'],
-                ['?s', 'schema:name', '?title']
+                ['?s', 'rdfs:label', '?title']
             ]
             const optionalFilters = []
 
@@ -174,9 +181,6 @@ const app = Vue.createApp({
             if (this.apireq.categoryId) {
                 patterns.push(['?s', 'a', '?class'])
                 filters.push(`VALUES ?class {${categoryIdToClass[this.apireq.categoryId].join(' ')}}`)
-            }
-            if (this.apireq.subcategoryId) {
-                patterns.push(['?s', 'a', subcategoryIdToClass[this.apireq.subcategoryId]])
             }
             if (this.apireq.subcategoryId) {
                 patterns.push(['?s', 'a', subcategoryIdToClass[this.apireq.subcategoryId]])
@@ -229,9 +233,6 @@ SERVICE neptune-fts:search {
                     optionalPatterns.push(['?s', sortToOrderByTerm[this.apireq.sort], `?${this.apireq.sort}`])
                 }
                 orderByClause = `ORDER BY ?${this.apireq.sort}`
-                if (this.apireq.sort === 'title') {
-                    optionalFilters.push(`FILTER(LANG(?${this.apireq.sort}) = "")`)
-                }
             }
 
             /**
