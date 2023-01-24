@@ -11,6 +11,7 @@
   yasgui["{{ .Get "id" }}"] = new Yasgui(document.getElementById("yasgui-{{ .Get "id" }}"), {
     requestConfig: {{ dict "endpoint" (.Get "endpoint") }},
     persistenceId: "{{ .Get "id" }}",
+    autofocus: false,
     copyEndpointOnNewTab: false,
     endpointCatalogueOptions: {
       getData: function () {
