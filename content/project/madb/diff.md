@@ -19,6 +19,7 @@ GitHubの[mediaarts-db/dataset](https://github.com/mediaarts-db/dataset)で公�
 |`https://sparql.metadata.moe/madb-20211011/query`|GitHub [2021/10/11](https://github.com/mediaarts-db/dataset/tree/dd3d8ecccd0b814891959c2fe566772d9f897afc)|
 |`https://sparql.metadata.moe/madb-20220217/query`|GitHub [2022/02/17](https://github.com/mediaarts-db/dataset/tree/76f7813a6d1f22eaca6683ba4793f5c19464d181)|
 |`https://sparql.metadata.moe/madb-20221026/query`|MADB Lab [2022/10/26](https://warp.ndl.go.jp/info:ndljp/pid/12363956/mediag.bunka.go.jp/madb_lab/lod/download)|
+|`https://sparql.metadata.moe/madb-20230323/query`|MADB Lab [2023/03/23](https://mediag.bunka.go.jp/madb_lab/lod/download/)|
 
 ## 比較用クエリ
 
@@ -62,6 +63,14 @@ query=`SELECT *
   {
     SERVICE <https://sparql.metadata.moe/madb-20221026/query> {
       SELECT ("20221026" AS ?version) (COUNT(*) AS ?cnt) WHERE {
+        ?s ?p ?o .
+      }
+    }
+  }
+  UNION
+  {
+    SERVICE <https://sparql.metadata.moe/madb-20230323/query> {
+      SELECT ("20230323" AS ?version) (COUNT(*) AS ?cnt) WHERE {
         ?s ?p ?o .
       }
     }
@@ -117,6 +126,15 @@ SELECT ?normalizedAdditionalType ?version ?cnt
       GROUP BY ?additionalType
     }
   }
+  UNION
+  {
+    SERVICE <https://sparql.metadata.moe/madb-20230323/query> {
+      SELECT ("20230323" AS ?version) ?additionalType (COUNT(*) AS ?cnt) WHERE {
+        ?s schema:additionalType ?additionalType .
+      }
+      GROUP BY ?additionalType
+    }
+  }
   # 20220217以降でPREFIXが変わったため
   BIND (URI(REPLACE(STR(?additionalType), "class/", "class#")) AS ?normalizedAdditionalType)
 }
@@ -161,6 +179,14 @@ query=`SELECT ?type (GROUP_CONCAT(?version ; separator=",") AS ?versions)
   {
     SERVICE <https://sparql.metadata.moe/madb-20221026/query> {
       SELECT DISTINCT ("20221026" AS ?version) ?type WHERE {
+        ?s a ?type .
+      }
+    }
+  }
+  UNION
+  {
+    SERVICE <https://sparql.metadata.moe/madb-20230323/query> {
+      SELECT DISTINCT ("20230323" AS ?version) ?type WHERE {
         ?s a ?type .
       }
     }
@@ -216,6 +242,15 @@ query=`SELECT ?p (GROUP_CONCAT(?version ; separator=",") AS ?versions)
       GROUP BY ?p
     }
   }
+  UNION
+  {
+    SERVICE <https://sparql.metadata.moe/madb-20230323/query> {
+      SELECT ("20230323" AS ?version) ?p WHERE {
+        ?s ?p ?o .
+      }
+      GROUP BY ?p
+    }
+  }
 }
 GROUP BY ?p
 ORDER BY ?p
@@ -265,6 +300,14 @@ SELECT ?genre (GROUP_CONCAT(?version ; separator=",") AS ?versions)
       }
     }
   }
+  UNION
+  {
+    SERVICE <https://sparql.metadata.moe/madb-20230323/query> {
+      SELECT DISTINCT ("20230323" AS ?version) ?genre WHERE {
+        ?s schema:genre ?genre .
+      }
+    }
+  }
 }
 GROUP BY ?genre
 ORDER BY ?genre
@@ -278,6 +321,7 @@ SELECT ?genre (COUNT(*) AS ?cnt)
   ?s schema:identifier ?identifier ;
      schema:genre ?genre .
   MINUS {
+    # 比較対象のデータセット
     SERVICE <https://sparql.metadata.moe/madb-20210125/query> {
       SELECT * WHERE {
         ?s schema:identifier ?identifier .
@@ -336,6 +380,16 @@ SELECT ?providerName ?version ?cnt
   {
     SERVICE <https://sparql.metadata.moe/madb-20221026/query> {
       SELECT ("20221026" AS ?version) ?providerName (COUNT(*) AS ?cnt) WHERE {
+        ?s schema:additionalType <https://mediaarts-db.bunka.go.jp/data/class#CM> ;
+           schema:provider [ schema:name ?providerName ] .
+      }
+      GROUP BY ?providerName
+    }
+  }
+  UNION
+  {
+    SERVICE <https://sparql.metadata.moe/madb-20230323/query> {
+      SELECT ("20230323" AS ?version) ?providerName (COUNT(*) AS ?cnt) WHERE {
         ?s schema:additionalType <https://mediaarts-db.bunka.go.jp/data/class#CM> ;
            schema:provider [ schema:name ?providerName ] .
       }
