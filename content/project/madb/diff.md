@@ -19,7 +19,7 @@ GitHubの[mediaarts-db/dataset](https://github.com/mediaarts-db/dataset)で公�
 |`https://sparql.metadata.moe/madb-20211011/query`|GitHub [2021/10/11](https://github.com/mediaarts-db/dataset/tree/dd3d8ecccd0b814891959c2fe566772d9f897afc)|
 |`https://sparql.metadata.moe/madb-20220217/query`|GitHub [2022/02/17](https://github.com/mediaarts-db/dataset/tree/76f7813a6d1f22eaca6683ba4793f5c19464d181)|
 |`https://sparql.metadata.moe/madb-20221026/query`|MADB Lab [2022/10/26](https://warp.ndl.go.jp/info:ndljp/pid/12363956/mediag.bunka.go.jp/madb_lab/lod/download)|
-|`https://sparql.metadata.moe/madb-20230323/query`|MADB Lab [2023/03/23](https://mediag.bunka.go.jp/madb_lab/lod/download/)|
+|`https://sparql.metadata.moe/madb-20230323/query`|MADB Lab [2023/03/23](https://warp.ndl.go.jp/info:ndljp/pid/12772296/mediag.bunka.go.jp/madb_lab/lod/download)|
 
 ## 比較用クエリ
 
