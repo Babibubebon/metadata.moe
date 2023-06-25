@@ -20,8 +20,9 @@ GitHubの[mediaarts-db/dataset](https://github.com/mediaarts-db/dataset)で公�
 |`https://sparql.metadata.moe/madb-20220217/query`|GitHub [2022/02/17](https://github.com/mediaarts-db/dataset/tree/76f7813a6d1f22eaca6683ba4793f5c19464d181)|
 |`https://sparql.metadata.moe/madb-20221026/query`|MADB Lab [2022/10/26](https://warp.ndl.go.jp/info:ndljp/pid/12363956/mediag.bunka.go.jp/madb_lab/lod/download)|
 |`https://sparql.metadata.moe/madb-20230323/query`|MADB Lab [2023/03/23](https://warp.ndl.go.jp/info:ndljp/pid/12772296/mediag.bunka.go.jp/madb_lab/lod/download)|
-|N/A|MADB Lab 2023/04|
-|`https://sparql.metadata.moe/madb-20230518/query`|MADB Lab [2023/05/18](https://mediag.bunka.go.jp/madb_lab/lod/download/)|
+|`https://sparql.metadata.moe/madb-20230428/query`|MADB Lab [2023/04/28](https://warp.ndl.go.jp/info:ndljp/pid/12865217/mediag.bunka.go.jp/madb_lab/lod/download)|
+|`https://sparql.metadata.moe/madb-20230518/query`|MADB Lab 2023/05/18|
+|`https://sparql.metadata.moe/madb-20230615/query`|MADB Lab [2023/06/15](https://mediag.bunka.go.jp/madb_lab/lod/download/)|
 
 ## 比較用クエリ
 
@@ -79,8 +80,24 @@ query=`SELECT *
   }
   UNION
   {
+    SERVICE <https://sparql.metadata.moe/madb-20230428/query> {
+      SELECT ("20230428" AS ?version) (COUNT(*) AS ?cnt) WHERE {
+        ?s ?p ?o .
+      }
+    }
+  }
+  UNION
+  {
     SERVICE <https://sparql.metadata.moe/madb-20230518/query> {
       SELECT ("20230518" AS ?version) (COUNT(*) AS ?cnt) WHERE {
+        ?s ?p ?o .
+      }
+    }
+  }
+  UNION
+  {
+    SERVICE <https://sparql.metadata.moe/madb-20230615/query> {
+      SELECT ("20230615" AS ?version) (COUNT(*) AS ?cnt) WHERE {
         ?s ?p ?o .
       }
     }
@@ -147,8 +164,26 @@ SELECT ?normalizedAdditionalType ?version ?cnt
   }
   UNION
   {
+    SERVICE <https://sparql.metadata.moe/madb-20230428/query> {
+      SELECT ("20230428" AS ?version) ?additionalType (COUNT(*) AS ?cnt) WHERE {
+        ?s schema:additionalType ?additionalType .
+      }
+      GROUP BY ?additionalType
+    }
+  }
+  UNION
+  {
     SERVICE <https://sparql.metadata.moe/madb-20230518/query> {
       SELECT ("20230518" AS ?version) ?additionalType (COUNT(*) AS ?cnt) WHERE {
+        ?s schema:additionalType ?additionalType .
+      }
+      GROUP BY ?additionalType
+    }
+  }
+  UNION
+  {
+    SERVICE <https://sparql.metadata.moe/madb-20230615/query> {
+      SELECT ("20230615" AS ?version) ?additionalType (COUNT(*) AS ?cnt) WHERE {
         ?s schema:additionalType ?additionalType .
       }
       GROUP BY ?additionalType
@@ -212,8 +247,24 @@ query=`SELECT ?type (GROUP_CONCAT(?version ; separator=",") AS ?versions)
   }
   UNION
   {
+    SERVICE <https://sparql.metadata.moe/madb-20230428/query> {
+      SELECT DISTINCT ("20230323" AS ?version) ?type WHERE {
+        ?s a ?type .
+      }
+    }
+  }
+  UNION
+  {
     SERVICE <https://sparql.metadata.moe/madb-20230518/query> {
       SELECT DISTINCT ("20230518" AS ?version) ?type WHERE {
+        ?s a ?type .
+      }
+    }
+  }
+  UNION
+  {
+    SERVICE <https://sparql.metadata.moe/madb-20230615/query> {
+      SELECT DISTINCT ("20230615" AS ?version) ?type WHERE {
         ?s a ?type .
       }
     }
@@ -280,8 +331,26 @@ query=`SELECT ?p (GROUP_CONCAT(?version ; separator=",") AS ?versions)
   }
   UNION
   {
+    SERVICE <https://sparql.metadata.moe/madb-20230428/query> {
+      SELECT ("20230428" AS ?version) ?p WHERE {
+        ?s ?p ?o .
+      }
+      GROUP BY ?p
+    }
+  }
+  UNION
+  {
     SERVICE <https://sparql.metadata.moe/madb-20230518/query> {
       SELECT ("20230518" AS ?version) ?p WHERE {
+        ?s ?p ?o .
+      }
+      GROUP BY ?p
+    }
+  }
+  UNION
+  {
+    SERVICE <https://sparql.metadata.moe/madb-20230615/query> {
+      SELECT ("20230615" AS ?version) ?p WHERE {
         ?s ?p ?o .
       }
       GROUP BY ?p
@@ -346,8 +415,24 @@ SELECT ?genre (GROUP_CONCAT(?version ; separator=",") AS ?versions)
   }
   UNION
   {
+    SERVICE <https://sparql.metadata.moe/madb-20230428/query> {
+      SELECT DISTINCT ("20230428" AS ?version) ?genre WHERE {
+        ?s schema:genre ?genre .
+      }
+    }
+  }
+  UNION
+  {
     SERVICE <https://sparql.metadata.moe/madb-20230518/query> {
       SELECT DISTINCT ("20230518" AS ?version) ?genre WHERE {
+        ?s schema:genre ?genre .
+      }
+    }
+  }
+  UNION
+  {
+    SERVICE <https://sparql.metadata.moe/madb-20230615/query> {
+      SELECT DISTINCT ("20230615" AS ?version) ?genre WHERE {
         ?s schema:genre ?genre .
       }
     }
@@ -442,8 +527,28 @@ SELECT ?providerName ?version ?cnt
   }
   UNION
   {
+    SERVICE <https://sparql.metadata.moe/madb-20230428/query> {
+      SELECT ("20230428" AS ?version) ?providerName (COUNT(*) AS ?cnt) WHERE {
+        ?s schema:additionalType <https://mediaarts-db.bunka.go.jp/data/class#CM> ;
+           schema:provider [ schema:name ?providerName ] .
+      }
+      GROUP BY ?providerName
+    }
+  }
+  UNION
+  {
     SERVICE <https://sparql.metadata.moe/madb-20230518/query> {
       SELECT ("20230518" AS ?version) ?providerName (COUNT(*) AS ?cnt) WHERE {
+        ?s schema:additionalType <https://mediaarts-db.bunka.go.jp/data/class#CM> ;
+           schema:provider [ schema:name ?providerName ] .
+      }
+      GROUP BY ?providerName
+    }
+  }
+  UNION
+  {
+    SERVICE <https://sparql.metadata.moe/madb-20230615/query> {
+      SELECT ("20230615" AS ?version) ?providerName (COUNT(*) AS ?cnt) WHERE {
         ?s schema:additionalType <https://mediaarts-db.bunka.go.jp/data/class#CM> ;
            schema:provider [ schema:name ?providerName ] .
       }
@@ -456,7 +561,7 @@ ORDER BY ?providerName ?version
 
 {{< yasgui id="madb-lod-diff"
     endpoint="https://sparql.metadata.moe/madb/query"
-    endpoint-options="https://sparql.metadata.moe/madb/query,https://sparql.metadata.moe/madb-20210125/query,https://sparql.metadata.moe/madb-20210322/query,https://sparql.metadata.moe/madb-20211011/query,https://sparql.metadata.moe/madb-20220217/query,https://sparql.metadata.moe/madb-20221026/query,https://sparql.metadata.moe/madb-20230323/query,https://sparql.metadata.moe/madb-20230518/query"
+    endpoint-options="https://sparql.metadata.moe/madb/query,https://sparql.metadata.moe/madb-20210125/query,https://sparql.metadata.moe/madb-20210322/query,https://sparql.metadata.moe/madb-20211011/query,https://sparql.metadata.moe/madb-20220217/query,https://sparql.metadata.moe/madb-20221026/query,https://sparql.metadata.moe/madb-20230323/query,https://sparql.metadata.moe/madb-20230428/query,https://sparql.metadata.moe/madb-20230518/query,https://sparql.metadata.moe/madb-20230615/query"
 default-query=`SELECT * WHERE {
   ?sub ?pred ?obj .
 } LIMIT 10`

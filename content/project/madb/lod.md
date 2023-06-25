@@ -30,7 +30,7 @@ aliases = [
 
 ## Query with SPARQL
 
-Endpoint: `https://sparql.metadata.moe/madb/query` ([**2022/02/17版**](https://github.com/mediaarts-db/dataset/tree/76f7813a6d1f22eaca6683ba4793f5c19464d181))
+Endpoint: `https://sparql.metadata.moe/madb/query` ([**2022/06/15版**]({{< relref "diff.md" >}}))
 
 {{< yasgui id="madb-lod"
     endpoint="https://sparql.metadata.moe/madb/query"
