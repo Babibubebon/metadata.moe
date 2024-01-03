@@ -42,9 +42,9 @@ url = "project/research/"
 category = "project"
 
 [[params.menu]]
-description = "問い合わせ言語SPARQLに萌える話"
+description = "RDF問い合わせ言語SPARQLに萌える話"
 name = "SPARQL萌え"
-url = "sparql/"
+url = "project/sparql/"
 category = "project"
 
 [[params.menu]]
