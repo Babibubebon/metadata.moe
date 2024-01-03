@@ -5,7 +5,7 @@ description = "RDF問い合わせ言語SPARQLに萌える話"
 tags = []
 categories = ["SPARQL"]
 toc = true
-aliased = [
+aliases = [
     "/sparql/"
 ]
 +++
