@@ -5,7 +5,6 @@ theme = "hugo-theme-basic"
 title = "Metadata.Moe"
 
 enableEmoji = false
-googleAnalytics = "UA-7878096-15"
 
 [params]
 description = "メタデータを愛でる人々のためのWebサイトです。"
