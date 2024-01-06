@@ -1,5 +1,5 @@
 baseURL = "/"
-copyright = "© 2017- <a href=\"https://babibubebo.org/about/profile/\">Babibubebon</a></a> - <a href=\"https://babibubebo.org/about/site_about/\">Terms and Privacy</a>"
+copyright = "© 2017- <a href=\"https://babibubebo.org/about/profile/\">Babibubebon</a> - <a href=\"https://babibubebo.org/about/site_about/\">Terms and Privacy</a>"
 languageCode = "ja-jp"
 theme = "hugo-theme-basic"
 title = "Metadata.Moe"
