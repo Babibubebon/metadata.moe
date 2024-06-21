@@ -1,0 +1,32 @@
+{{ partial "header.html" . }}
+
+<body class="sans-serif w-90 w-75-ns center center-ns mv2 mv5-ns" typeof="schema:Article">
+  {{ $baseurl := .Site.BaseURL }}
+  <nav aria-label="Breadcrumb" class="breadcrumb">
+    <ol class="nav navbar-nav">
+      {{- range .Ancestors.Reverse }}
+        {{- if or .IsHome .Content }}
+        <li><a href="{{ .Permalink }}" class="b bb bw1 pb1 no-underline black">{{ .Title }}</a></li>
+        {{- end }}
+      {{- end }}
+    </ol>
+  </nav>
+
+  <section id="main" class="mt5">
+    <h1 property="schema:name" id="title">{{ .Title }}</h1>
+
+    {{ if .Params.toc }}
+    <aside>
+      {{ .TableOfContents }}
+    </aside>
+    {{ end }}
+
+    <article property="schema:articleBody" id="content" class="lh-copy">
+      {{ .Content }}
+    </article>
+  </section>
+
+  {{ partial "footer.html" . }}
+</body>
+
+</html>
