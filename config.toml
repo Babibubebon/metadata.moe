@@ -29,6 +29,12 @@ url = "project/madb/lod/"
 category = "dataset"
 
 [[params.menu]]
+description = "gBizINFOのSPARQLエンドポイント"
+name = "gBizINFO LOD"
+url = "project/gbizinfo/"
+category = "dataset"
+
+[[params.menu]]
 description = "DBpedia JapaneseのSPARQLエンドポイント(Apache Jena Fuseki)"
 name = "DBpedia Japanese mirror"
 url = "project/dbpedia-ja/"
