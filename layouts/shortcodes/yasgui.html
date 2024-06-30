@@ -1,10 +1,10 @@
 <div id="yasgui-{{ .Get "id" }}"></div>
 
-{{ $endpointOptions := slice }}
+{{- $endpointOptions := slice -}}
 {{ range split (.Get "endpoint-options") "," }}
-{{ if . }}
+{{- if . -}}
 {{ $endpointOptions = $endpointOptions | append (dict "endpoint" . ) }}
-{{ end }}
+{{- end -}}
 {{ end }}
 
 <script>
@@ -20,7 +20,7 @@
     },
     yasqe: {
       {{ with .Get "default-query" }}
-      value: {{ . }}
+      value: {{ trim . "\n" }}
       {{ end }}
     },
   });
