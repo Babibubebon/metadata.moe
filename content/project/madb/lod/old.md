@@ -39,8 +39,8 @@ SELECT * WHERE {
 
 ### Examples
 
-- {{< yasgui-query yasgui-id="madb-lod-old" title="公開年毎にTVアニメ数を集計する"
-query=`PREFIX schema: <http://schema.org/>
+- {{< yasgui-query yasgui-id="madb-lod-old" title="公開年毎にTVアニメ数を集計する" >}}
+PREFIX schema: <http://schema.org/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX ma: <https://metadata.moe/ns/madb/ma#>
@@ -51,10 +51,10 @@ SELECT ?y (COUNT(DISTINCT *) AS ?cnt)  WHERE {
 }
 GROUP BY (SUBSTR(?startDate, 1, 4) AS ?y)
 ORDER BY DESC(?y)
-` >}}
+{{< /yasgui-query >}}
 
-- {{< yasgui-query yasgui-id="madb-lod-old" title="タイトルに「!」「?」を多く含むTVアニメを取得する "
-query=`PREFIX schema: <http://schema.org/>
+- {{< yasgui-query yasgui-id="madb-lod-old" title="タイトルに「!」「?」を多く含むTVアニメを取得する " >}}
+PREFIX schema: <http://schema.org/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX ma: <https://metadata.moe/ns/madb/ma#>
@@ -68,10 +68,10 @@ SELECT ?s ?name ?mark WHERE {
 }
 ORDER BY DESC(STRLEN(?mark))
 LIMIT 100
-` >}}
+{{< /yasgui-query >}}
 
-- {{< yasgui-query yasgui-id="madb-lod-old" title="岡田麿里さん参加作品を取得する"
-query=`PREFIX schema: <http://schema.org/>
+- {{< yasgui-query yasgui-id="madb-lod-old" title="岡田麿里さん参加作品を取得する" >}}
+PREFIX schema: <http://schema.org/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX ma: <https://metadata.moe/ns/madb/ma#>
@@ -94,7 +94,7 @@ WHERE {
   BIND(REPLACE(?contributers, ".*\\[(.+?)\\]岡田\\s*麿里.*", "$1") AS ?role)
 }
 GROUP BY ?col ?colName
-` >}}
+{{< /yasgui-query >}}
 
 ---
 

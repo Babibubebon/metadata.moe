@@ -4,7 +4,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-code {
+:not(pre) > code {
   padding: 2px 4px;
   font-size: 90%;
   background-color: #eeeeee;
@@ -16,10 +16,12 @@ pre {
   padding: 9.5px;
   margin: 0 0 10px;
   line-height: 1.4;
+  font-size: 95%;
   word-break: break-all;
   word-wrap: break-word;
   border: 1px solid #ccc;
   /* border-radius: 4px; */
+  overflow-x: auto;
 }
 
 pre,

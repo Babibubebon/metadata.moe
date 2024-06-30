@@ -29,8 +29,8 @@ GitHubの[mediaarts-db/dataset](https://github.com/mediaarts-db/dataset)で公�
 
 いずれも激重クエリなので、結果が返るまで辛抱してお待ちください（連打するとサーバが死んでしまいます）。
 
-- {{< yasgui-query yasgui-id="madb-lod-diff" title="総トリプル数"
-query=`SELECT *
+- {{< yasgui-query yasgui-id="madb-lod-diff" title="総トリプル数" hide-query="true" >}}
+SELECT *
 {
   {
     SERVICE <https://sparql.metadata.moe/madb-20210125/query> {
@@ -103,10 +103,10 @@ query=`SELECT *
       }
     }
   }
-}` >}}
+{{< /yasgui-query >}}
 
-- {{< yasgui-query yasgui-id="madb-lod-diff" title="分野別エンティティ数"
-query=`PREFIX schema: <https://schema.org/>
+- {{< yasgui-query yasgui-id="madb-lod-diff" title="分野別エンティティ数" hide-query="true" >}}
+PREFIX schema: <https://schema.org/>
 
 SELECT ?normalizedAdditionalType ?version ?cnt
 {
@@ -194,10 +194,10 @@ SELECT ?normalizedAdditionalType ?version ?cnt
   BIND (URI(REPLACE(STR(?additionalType), "class/", "class#")) AS ?normalizedAdditionalType)
 }
 ORDER BY ?normalizedAdditionalType ?version
-` >}}
+{{< /yasgui-query >}}
 
-- {{< yasgui-query yasgui-id="madb-lod-diff" title="使用しているクラス"
-query=`SELECT ?type (GROUP_CONCAT(?version ; separator=",") AS ?versions)
+- {{< yasgui-query yasgui-id="madb-lod-diff" title="使用しているクラス" hide-query="true" >}}
+SELECT ?type (GROUP_CONCAT(?version ; separator=",") AS ?versions)
 {
   {
     SERVICE <https://sparql.metadata.moe/madb-20210125/query> {
@@ -272,10 +272,10 @@ query=`SELECT ?type (GROUP_CONCAT(?version ; separator=",") AS ?versions)
   }
 }
 GROUP BY ?type
-` >}}
+{{< /yasgui-query >}}
 
-- {{< yasgui-query yasgui-id="madb-lod-diff" title="使用しているプロパティ"
-query=`SELECT ?p (GROUP_CONCAT(?version ; separator=",") AS ?versions)
+- {{< yasgui-query yasgui-id="madb-lod-diff" title="使用しているプロパティ" hide-query="true" >}}
+SELECT ?p (GROUP_CONCAT(?version ; separator=",") AS ?versions)
 {
   {
     SERVICE <https://sparql.metadata.moe/madb-20210125/query> {
@@ -360,10 +360,10 @@ query=`SELECT ?p (GROUP_CONCAT(?version ; separator=",") AS ?versions)
 }
 GROUP BY ?p
 ORDER BY ?p
-` >}}
+{{< /yasgui-query >}}
 
-- {{< yasgui-query yasgui-id="madb-lod-diff" title="使用しているジャンル(schema:genre)"
-query=`PREFIX schema: <https://schema.org/>
+- {{< yasgui-query yasgui-id="madb-lod-diff" title="使用しているジャンル(schema:genre)" hide-query="true" >}}
+PREFIX schema: <https://schema.org/>
 
 SELECT ?genre (GROUP_CONCAT(?version ; separator=",") AS ?versions)
 {
@@ -441,10 +441,10 @@ SELECT ?genre (GROUP_CONCAT(?version ; separator=",") AS ?versions)
 }
 GROUP BY ?genre
 ORDER BY ?genre
-` >}}
+{{< /yasgui-query >}}
 
-- {{< yasgui-query yasgui-id="madb-lod-diff" title="エンティティのジャンル別増分"
-query=`PREFIX schema: <https://schema.org/>
+- {{< yasgui-query yasgui-id="madb-lod-diff" title="エンティティのジャンル別増分" hide-query="true" >}}
+PREFIX schema: <https://schema.org/>
 
 SELECT ?genre (COUNT(*) AS ?cnt)
 {
@@ -460,10 +460,11 @@ SELECT ?genre (COUNT(*) AS ?cnt)
   }
 }
 GROUP BY ?genre
-ORDER BY DESC(COUNT(*))` >}}
+ORDER BY DESC(COUNT(*))
+{{< /yasgui-query >}}
 
-- {{< yasgui-query yasgui-id="madb-lod-diff" title="マンガ分野: 所蔵館毎のアイテム数"
-query=`PREFIX schema: <https://schema.org/>
+- {{< yasgui-query yasgui-id="madb-lod-diff" title="マンガ分野: 所蔵館毎のアイテム数" hide-query="true" >}}
+PREFIX schema: <https://schema.org/>
 
 SELECT ?providerName ?version ?cnt
 {
@@ -558,7 +559,7 @@ SELECT ?providerName ?version ?cnt
   }
 }
 ORDER BY ?providerName ?version
-` >}}
+{{< /yasgui-query >}}
 
 {{< yasgui id="madb-lod-diff"
     endpoint="https://sparql.metadata.moe/madb/query"

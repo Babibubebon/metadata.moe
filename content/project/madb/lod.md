@@ -49,24 +49,26 @@ SELECT * WHERE {
 
 ### Examples
 
-- {{< yasgui-query yasgui-id="madb-lod" title="公開年毎にTVアニメシリーズ数を集計する"
-query=`PREFIX schema: <https://schema.org/>
+- {{< yasgui-query yasgui-id="madb-lod" title="公開年毎にTVアニメシリーズ数を集計する" >}}
+PREFIX schema: <https://schema.org/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX class: <https://mediaarts-db.bunka.go.jp/data/class#>
+
 SELECT ?y (COUNT(DISTINCT *) AS ?cnt)  WHERE {
   ?s a class:AnimationTVRegularSeries ;
      schema:datePublished ?datePublished .
 }
 GROUP BY (SUBSTR(?datePublished, 1, 4) AS ?y)
 ORDER BY DESC(?y)
-` >}}
+{{< /yasgui-query >}}
 
-- {{< yasgui-query yasgui-id="madb-lod" title="タイトルに「!」「?」を多く含むTVアニメを取得する "
-query=`PREFIX schema: <https://schema.org/>
+- {{< yasgui-query yasgui-id="madb-lod" title="タイトルに「!」「?」を多く含むTVアニメを取得する " >}}
+PREFIX schema: <https://schema.org/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX class: <https://mediaarts-db.bunka.go.jp/data/class#>
+
 SELECT ?s ?name ?mark WHERE {
   ?s a class:AnimationTVRegularSeries ;
      rdfs:label ?name .
@@ -76,13 +78,14 @@ SELECT ?s ?name ?mark WHERE {
 }
 ORDER BY DESC(STRLEN(?mark))
 LIMIT 100
-` >}}
+{{< /yasgui-query >}}
 
-- {{< yasgui-query yasgui-id="madb-lod" title="岡田麿里さん参加作品を取得する"
-query=`PREFIX schema: <https://schema.org/>
+- {{< yasgui-query yasgui-id="madb-lod" title="岡田麿里さん参加作品を取得する" >}}
+PREFIX schema: <https://schema.org/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX class: <https://mediaarts-db.bunka.go.jp/data/class#>
+
 SELECT
  ?col ?colName (GROUP_CONCAT(DISTINCT ?role) AS ?roles)
 WHERE {
@@ -101,17 +104,16 @@ WHERE {
   BIND(REPLACE(?contributers, ".*\\[(.+?)\\]岡田\\s*麿里.*", "$1") AS ?role)
 }
 GROUP BY ?col ?colName
-` >}}
+{{< /yasgui-query >}}
 
-- {{< yasgui-query yasgui-id="madb-lod" title="情報資源分類一覧を取得する"
-query=`PREFIX schema: <https://schema.org/>
+- {{< yasgui-query yasgui-id="madb-lod" title="情報資源分類一覧を取得する" >}}
+PREFIX schema: <https://schema.org/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX class: <https://mediaarts-db.bunka.go.jp/data/class/>
 
 # 情報資源分類
 # Ref. <https://github.com/mediaarts-db/dataset/blob/ea0d43b555f412b127bb2e8127b7469d6e42fa29/README.md#211-%E6%83%85%E5%A0%B1%E8%B3%87%E6%BA%90%E5%88%86%E9%A1%9E>
-
 SELECT
  DISTINCT (?additionalType AS ?分野) (?class AS ?大分類) (?genre AS ?小分類)
 WHERE {
@@ -119,7 +121,7 @@ WHERE {
      schema:additionalType ?additionalType ;
          schema:genre ?genre .
 }
-` >}}
+{{< /yasgui-query >}}
 
 ---
 

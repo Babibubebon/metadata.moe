@@ -5,7 +5,7 @@ tags = []
 categories = ["gBizINFO"]
 +++
 
-[gBizINFO](https://info.gbiz.go.jp/) でかつて提供されていた[SPARQL API バージョン 1.4](https://web.archive.org/web/2/https://info.gbiz.go.jp/api/document/API.pdf)と同等のデータを提供するSPARQLエンドポイントです。
+[gBizINFO](https://info.gbiz.go.jp/) でかつて提供されていた[SPARQL API バージョン 1.4](https://warp.ndl.go.jp/info:ndljp/pid/13539552/info.gbiz.go.jp/api/document/API.pdf)と同等のデータを提供するSPARQLエンドポイントです。
 
 データセットの生成については [Babibubebon/gbizinfo-lod](https://github.com/Babibubebon/gbizinfo-lod) をご覧ください。
 
