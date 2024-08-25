@@ -34,6 +34,6 @@ toc = false
 
 ゆるーく運用しているので、たまに落ちてるかもしれません。繋がらないときは以下をご確認ください。
 
-<https://blab.statuspage.io/>
+<https://status.babibubebo.org/>
 
 [^1]: `https://www.w3.org/ns/activitystreams#cc` の値に `https://www.w3.org/ns/activitystreams#Public` が含まれる状態
