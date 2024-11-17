@@ -18,7 +18,7 @@ toc = true
 
 -----
 
-データ更新日: <date>`2024-06-18`</date>
+データ更新日: <date>`2024-11-10`</date>
 
 Endpoint: `https://sparql.metadata.moe/gbizinfo/query`
 
