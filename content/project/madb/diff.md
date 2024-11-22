@@ -103,6 +103,7 @@ SELECT *
       }
     }
   }
+}
 {{< /yasgui-query >}}
 
 - {{< yasgui-query yasgui-id="madb-lod-diff" title="分野別エンティティ数" hide-query="true" >}}
