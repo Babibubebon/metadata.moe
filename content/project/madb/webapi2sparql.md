@@ -5,11 +5,11 @@ tags = []
 categories = ["MADB"]
 +++
 
-[メディア芸術データベース（ベータ版）WebAPI](https://mediaarts-db.bunka.go.jp/about#anc03)[^1]に対するリクエストを、ほぼ同等[^2]の検索結果が得られる[MADB Lab SPARQLクエリサービス](https://mediag.bunka.go.jp/madb_lab/lod/sparql/)の**SPARQLクエリ**へ変換します。
+[メディア芸術データベース（ベータ版）WebAPI](https://web.archive.org/web/20240112040313/https://mediaarts-db.bunka.go.jp/about#anc03)[^1]に対するリクエストを、ほぼ同等[^2]の検索結果が得られる[MADB Lab SPARQLクエリサービス](https://mediag.bunka.go.jp/madb_lab/lod/sparql/)の**SPARQLクエリ**へ変換します。
 
 対応するWebAPI仕様/データセットのバージョンは以下のとおりです。
 
-- WebAPI: [No.5 2022/02/17](https://mediaarts-db.bunka.go.jp/resources/pdf/mediaartsdb_webapi_documents.pdf)
+- WebAPI: [No.5 2022/02/17](https://web.archive.org/web/20231101234759/https://mediaarts-db.bunka.go.jp/resources/pdf/mediaartsdb_webapi_documents.pdf)
 - SPARQLクエリ: [データセット 2022-10-26](https://mediag.bunka.go.jp/madb_lab/lod/download/)
 
 <div id="app">
@@ -216,5 +216,5 @@ categories = ["MADB"]
 <script src="https://cdn.jsdelivr.net/npm/vue@3.2.45/dist/vue.global.prod.js"></script>
 <script src="/js/madb/webapi2sparql.js" type="module"></script>
 
-[^1]: API仕様書 <https://mediaarts-db.bunka.go.jp/resources/pdf/mediaartsdb_webapi_documents.pdf>
+[^1]: API仕様書 <https://web.archive.org/web/20231101234759/https://mediaarts-db.bunka.go.jp/resources/pdf/mediaartsdb_webapi_documents.pdf>
 [^2]: 全文検索やソートの実装の差異、RDFのデータセットへ変換される過程で生じたと思われるデータ上の差異などが存在します。
