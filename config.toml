@@ -29,6 +29,12 @@ url = "project/madb/lod/"
 category = "dataset"
 
 [[params.menu]]
+description = "ISDNのSPARQLエンドポイント"
+name = "ISDN Linked Data"
+url = "project/isdn/"
+category = "dataset"
+
+[[params.menu]]
 description = "gBizINFOのSPARQLエンドポイント"
 name = "gBizINFO LOD"
 url = "project/gbizinfo/"
