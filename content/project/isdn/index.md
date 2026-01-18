@@ -10,7 +10,7 @@ ISDN (International Standard Dojin Numbering; 国際標準同人誌番号) のRD
 
 データセット生成については以下リポジトリをご覧ください。
 
-- [Babibubebon/isdn-ld](https://github.com/Babibubebon/isdn-ld): RDF変換ツール
+- RDF変換ツール: [Babibubebon/isdn-ld](https://github.com/Babibubebon/isdn-ld)
 
 なお、Linked "Open" Data ではないことにご留意ください。
 
@@ -52,11 +52,9 @@ PREFIX schema: <http://schema.org/>
 
 SELECT *
 {
-  ?s schema:publisher/schema:name "ばびぶべぼ研究室"@ja ;
+  ?s schema:publisher/schema:name "ばびぶべぼ研究室" ;
      schema:name ?name ;
      schema:datePublished ?datePublished .
-  
-  FILTER (LANG(?name) = "ja")
 }
 ORDER BY DESC(?datePublished)
 {{< /yasgui-query >}}
@@ -65,17 +63,15 @@ ORDER BY DESC(?datePublished)
 PREFIX isdn: <http://metadata.moe/ns/isdn/>
 PREFIX schema: <http://schema.org/>
 
-SELECT ?publisherName (SUM(?numberOfPages) AS ?sumPages)
+SELECT ?isdnRegistrant ?publisherName (SUM(?numberOfPages) AS ?sumPages)
 {
   ?s schema:numberOfPages ?numberOfPages ;
      schema:publisher [
-      schema:identifier ?publisherId ;
+      isdn:isdnRegistrant ?isdnRegistrant ;
       schema:name ?publisherName ;
      ] .
-  
-  FILTER (LANG(?publisherName) = "ja")
 }
-GROUP BY ?publisherId ?publisherName
+GROUP BY ?isdnRegistrant ?publisherName
 ORDER BY DESC(?sumPages)
 LIMIT 100
 {{< /yasgui-query >}}
@@ -120,3 +116,8 @@ ORDER BY DESC(?cnt)
 - デフォルトグラフ : 一般
 - `http://metadata.moe/isdn/graph/ageRestricted15` : 15禁
 - `http://metadata.moe/isdn/graph/ageRestricted18` : 18禁
+
+## 語彙・制約記述
+
+- RDF Schema: <http://metadata.moe/ns/isdn/>
+- SHACL Shapes: <http://metadata.moe/ns/isdn/shapes/>
