@@ -86,7 +86,8 @@ FROM <urn:x-arq:DefaultGraph>
 FROM <http://metadata.moe/isdn/graph/ageRestricted15>
 FROM <http://metadata.moe/isdn/graph/ageRestricted18>
 {
-  ?s isdn:ratingAge ?ratingAge .
+  ?s a isdn:DoujinProduct ;
+     isdn:ratingAge ?ratingAge .
 }
 GROUP BY ?ratingAge
 {{< /yasgui-query >}}
@@ -95,7 +96,7 @@ GROUP BY ?ratingAge
 PREFIX isdn: <http://metadata.moe/ns/isdn/>
 PREFIX schema: <http://schema.org/>
 
-SELECT ?comicketGenreName (COUNT(DISTINCT ?s) AS ?cnt)
+SELECT ?comicketGenreName (COUNT(DISTINCT ?s) AS ?count)
 FROM <urn:x-arq:DefaultGraph>
 FROM <http://metadata.moe/isdn/graph/ageRestricted15>
 FROM <http://metadata.moe/isdn/graph/ageRestricted18>
@@ -106,7 +107,42 @@ FROM <http://metadata.moe/isdn/graph/ageRestricted18>
   ]
 }
 GROUP BY ?comicketGenreName
-ORDER BY DESC(?cnt)
+ORDER BY DESC(?count)
+{{< /yasgui-query >}}
+
+{{< yasgui-query yasgui-id="isdn" title="コミケジャンル×レーティングで出版物をクロス集計して多い順に並べる" >}}
+PREFIX isdn: <http://metadata.moe/ns/isdn/>
+PREFIX schema: <http://schema.org/>
+
+SELECT ?comicketGenreName ?ratingGender ?ratingAge (COUNT(*) AS ?count)
+FROM <urn:x-arq:DefaultGraph>
+FROM <http://metadata.moe/isdn/graph/ageRestricted15>
+FROM <http://metadata.moe/isdn/graph/ageRestricted18>
+WHERE {
+  ?work schema:genre [
+          a isdn:ComiketGenre ;
+          schema:name ?comicketGenreName ;
+        ] ;
+        isdn:ratingGender ?ratingGender ;
+        isdn:ratingAge ?ratingAge .
+}
+GROUP BY ?comicketGenreName ?ratingGender ?ratingAge
+ORDER BY DESC(?count)
+{{< /yasgui-query >}}
+
+{{< yasgui-query yasgui-id="isdn" title="形態毎に出版物を集計して多い順に並べる" >}}
+PREFIX isdn: <http://metadata.moe/ns/isdn/>
+PREFIX schema: <http://schema.org/>
+
+SELECT ?category (COUNT(DISTINCT ?s) AS ?count)
+FROM <urn:x-arq:DefaultGraph>
+FROM <http://metadata.moe/isdn/graph/ageRestricted15>
+FROM <http://metadata.moe/isdn/graph/ageRestricted18>
+{
+  ?s schema:category ?category
+}
+GROUP BY ?category
+ORDER BY DESC(?count)
 {{< /yasgui-query >}}
 
 ## グラフURI一覧
