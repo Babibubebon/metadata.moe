@@ -1,5 +1,7 @@
-/.well-known/void /void.ttl 302
-/ns/madb/ma /ns/madb/ma.ttl 302
-/toaru-sparql/bib/* /ns/toaru.ttl 302
-/toaru-sparql/class/* /ns/toaru.ttl 302
-/toaru-sparql/elements/* /ns/toaru.ttl 302
+/.well-known/void /void.ttl 303
+/ns/madb/ma /ns/madb/ma.ttl 303
+/ns/isdn/* /ns/isdn/isdn.ttl 303
+/ns/isdn/shapes/* /ns/isdn/shapes.ttl 200
+/toaru-sparql/bib/* /ns/toaru.ttl 303
+/toaru-sparql/class/* /ns/toaru.ttl 303
+/toaru-sparql/elements/* /ns/toaru.ttl 303

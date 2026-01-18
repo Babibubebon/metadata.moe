@@ -1,0 +1,245 @@
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema:<http://schema.org/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix isdn:  <http://metadata.moe/ns/isdn/> .
+
+#################################################################
+# Classes
+#################################################################
+
+isdn:DoujinProduct
+    a rdfs:Class ;
+    rdfs:label "同人頒布物"@ja ;
+    rdfs:label "Doujin Product"@en ;
+    rdfs:subClassOf schema:Product .
+
+isdn:Book
+    a rdfs:Class ;
+    rdfs:subClassOf schema:Product ;
+    rdfs:label "書籍"@ja ;
+    rdfs:label "Book"@en .
+
+isdn:DoujinGoods
+    a rdfs:Class ;
+    rdfs:subClassOf isdn:DoujinProduct ;
+    rdfs:label "同人グッズ"@ja ;
+    rdfs:label "Doujin Goods"@en .
+
+isdn:Music
+    a rdfs:Class ;
+    rdfs:subClassOf schema:Product ;
+    rdfs:label "音楽"@ja ;
+    rdfs:label "Music"@en .
+
+isdn:Software
+    a rdfs:Class ;
+    rdfs:subClassOf schema:Product ;
+    rdfs:label "ソフトウェア"@ja ;
+    rdfs:label "Software"@en .
+
+isdn:Hardware
+    a rdfs:Class ;
+    rdfs:subClassOf schema:Product ;
+    rdfs:label "ハードウェア"@ja ;
+    rdfs:label "Hardware"@en .
+
+isdn:FigurativeProduct
+    a rdfs:Class ;
+    rdfs:subClassOf schema:Product ;
+    rdfs:label "フィギュア・ドール"@ja ;
+    rdfs:label "Figurative Product"@en .
+
+isdn:Wearable
+    a rdfs:Class ;
+    rdfs:subClassOf schema:Product ;
+    rdfs:label "衣装・アクセサリ"@ja ;
+    rdfs:label "Wearable"@en .
+
+isdn:Flyer
+    a rdfs:Class ;
+    rdfs:subClassOf schema:Product ;
+    rdfs:label "フライヤー（ペーパー）"@ja ;
+    rdfs:label "Flyer (Paper)"@en .
+
+isdn:EventCatalog
+    a rdfs:Class ;
+    rdfs:subClassOf schema:Product ;
+    rdfs:label "イベントカタログ"@ja ;
+    rdfs:label "Event Catalog"@en .
+
+isdn:ISDNIdentifier
+    a rdfs:Class ;
+    rdfs:label "ISDN識別子"@ja ;
+    rdfs:label "ISDN Identifier"@en ;
+    rdfs:seeAlso <http://isdn.jp/> .
+
+isdn:ComiketGenre
+    a rdfs:Class ;
+    rdfs:label "コミケットジャンル"@ja ;
+    rdfs:label "コミックマーケットジャンル"@ja ;
+    rdfs:label "Comiket Genre"@en ;
+    rdfs:seeAlso <http://ja.wikipedia.org/wiki/コミックマーケットのジャンルコード> .
+
+isdn:CCode
+    a rdfs:Class ;
+    rdfs:label "Cコード"@ja ;
+    rdfs:label "C-CODE"@en ;
+    rdfs:seeAlso <http://ja.wikipedia.org/wiki/日本図書コード#Cコード> .
+
+isdn:UserOption
+    a rdfs:Class ;
+    rdfs:label "ユーザー定義項目"@ja ;
+    rdfs:label "User-defined Option"@en .
+
+isdn:OriginalWork
+    a rdfs:Class ;
+    rdfs:label "オリジナル作品"@ja ;
+    rdfs:label "Original Work"@en ;
+    rdfs:subClassOf schema:CreativeWork .
+
+isdn:DerivativeWork
+    a rdfs:Class ;
+    rdfs:label "派生作品"@ja ;
+    rdfs:label "Derivative Work"@en ;
+    rdfs:subClassOf schema:CreativeWork .
+
+#################################################################
+# Properties for isdn:DoujinProduct
+#################################################################
+
+isdn:isdn
+    a rdf:Property ;
+    rdfs:label "ISDNコード"@ja ;
+    rdfs:domain isdn:DoujinProduct ;
+    rdfs:range xsd:string .
+
+isdn:derivationType
+    a rdf:Property ;
+    rdfs:label "派生作品種別"@ja ;
+    rdfs:domain isdn:DoujinProduct ;
+    rdfs:range rdfs:Resource .
+
+isdn:ratingGender
+    a rdf:Property ;
+    rdfs:label "レーティング（性別）"@ja ;
+    rdfs:comment "区別なし・女性向け・男性向け"@ja ;
+    rdfs:domain isdn:DoujinProduct ;
+    rdfs:range xsd:string .
+
+isdn:ratingAge
+    a rdf:Property ;
+    rdfs:label "レーティング（年齢）"@ja ;
+    rdfs:comment "一般・15禁・18禁"@ja ;
+    rdfs:domain isdn:DoujinProduct ;
+    rdfs:range xsd:string .
+
+isdn:bookJanCodeSecondRow
+    a rdf:Property ;
+    rdfs:label "2段目バーコード"@ja ;
+    rdfs:domain isdn:DoujinProduct ;
+    rdfs:range xsd:string .
+
+isdn:productStyle
+    a rdf:Property ;
+    rdfs:label "体裁"@ja ;
+    rdfs:comment "印刷・製本・プレスなど"@ja ;
+    rdfs:domain isdn:DoujinProduct ;
+    rdfs:range xsd:string .
+
+isdn:printingMethod
+    a rdf:Property ;
+    rdfs:label "印刷方法"@ja ;
+    rdfs:domain isdn:DoujinProduct ;
+    rdfs:range xsd:string .
+
+isdn:bindingMethod
+    a rdf:Property ;
+    rdfs:label "綴じ方法"@ja ;
+    rdfs:domain isdn:DoujinProduct ;
+    rdfs:range xsd:string .
+
+isdn:carrierType
+    a rdf:Property ;
+    rdfs:label "媒体形態"@ja ;
+    rdfs:domain isdn:DoujinProduct ;
+    rdfs:range xsd:string .
+
+isdn:numberOfPages
+    a rdf:Property ;
+    rdfs:label "ページ数"@ja ;
+    rdfs:domain isdn:DoujinProduct ;
+    rdfs:range xsd:decimal .
+
+#################################################################
+# Properties for isdn:ISDNIdentifier
+#################################################################
+
+isdn:isdnPrefix
+    a rdf:Property ;
+    rdfs:label "接頭記号"@ja ;
+    rdfs:domain isdn:ISDNIdentifier ;
+    rdfs:range xsd:string .
+
+isdn:isdnRegistrationGroup
+    a rdf:Property ;
+    rdfs:label "グループ記号"@ja ;
+    rdfs:domain isdn:ISDNIdentifier ;
+    rdfs:range xsd:string .
+
+isdn:isdnRegistrationGroupName
+    a rdf:Property ;
+    rdfs:label "グループ名称"@ja ;
+    rdfs:domain isdn:ISDNIdentifier ;
+    rdfs:range xsd:string .
+
+isdn:isdnRegistrant
+    a rdf:Property ;
+    rdfs:label "出版者記号"@ja ;
+    rdfs:domain isdn:ISDNIdentifier ;
+    rdfs:range xsd:string .
+
+isdn:isdnPublication
+    a rdf:Property ;
+    rdfs:label "書名記号"@ja ;
+    rdfs:domain isdn:ISDNIdentifier ;
+    rdfs:range xsd:string .
+
+isdn:isdnCheckDigit
+    a rdf:Property ;
+    rdfs:label "チェックデジット"@ja ;
+    rdfs:domain isdn:ISDNIdentifier ;
+    rdfs:range xsd:string .
+
+#################################################################
+# Properties for ComiketGenre
+#################################################################
+
+isdn:genreCode
+    a rdf:Property ;
+    rdfs:label "ジャンルコード"@ja ;
+    rdfs:domain isdn:ComiketGenre ;
+    rdfs:range xsd:string .
+
+#################################################################
+# Properties for CCode
+#################################################################
+
+isdn:cCodeTargetAudience
+    a rdf:Property ;
+    rdfs:label "販売対象"@ja ;
+    rdfs:domain isdn:CCode ;
+    rdfs:range xsd:string .
+
+isdn:cCodePublicationForm
+    a rdf:Property ;
+    rdfs:label "形態"@ja ;
+    rdfs:domain isdn:CCode ;
+    rdfs:range xsd:string .
+
+isdn:cCodeContentCategory
+    a rdf:Property ;
+    rdfs:label "内容"@ja ;
+    rdfs:domain isdn:CCode ;
+    rdfs:range xsd:string .
