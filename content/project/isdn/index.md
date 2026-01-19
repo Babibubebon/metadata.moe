@@ -157,3 +157,13 @@ ORDER BY DESC(?count)
 
 - RDF Schema: <http://metadata.moe/ns/isdn/>
 - SHACL Shapes: <http://metadata.moe/ns/isdn/shapes/>
+
+## リソースURI
+
+`http://isdn.metadata.moe/res/{isdn}`
+
+HTTPで参照すると、コンテンツネゴシエーションでリダイレクトされます。
+
+- HTMLページ: `https://isdn.metadata.moe/page/{isdn}`
+- データ: `https://isdn.metadata.moe/data/{isdn}.{file_ext}`
+  - file_ext: `nt`, `ttl`, `json`, `jsonld`, `rdf`
