@@ -83,8 +83,8 @@ PREFIX schema: <http://schema.org/>
 SELECT ?ratingAge (COUNT(*) AS ?cnt)
 # SPARQL非標準ですが、Apache Jena独自のデフォルトグラフURIが利用できます
 FROM <urn:x-arq:DefaultGraph>
-FROM <http://metadata.moe/isdn/graph/ageRestricted15>
-FROM <http://metadata.moe/isdn/graph/ageRestricted18>
+FROM <http://isdn.metadata.moe/graph/ageRestricted15>
+FROM <http://isdn.metadata.moe/graph/ageRestricted18>
 {
   ?s a isdn:DoujinProduct ;
      isdn:ratingAge ?ratingAge .
@@ -98,8 +98,8 @@ PREFIX schema: <http://schema.org/>
 
 SELECT ?comicketGenreName (COUNT(DISTINCT ?s) AS ?count)
 FROM <urn:x-arq:DefaultGraph>
-FROM <http://metadata.moe/isdn/graph/ageRestricted15>
-FROM <http://metadata.moe/isdn/graph/ageRestricted18>
+FROM <http://isdn.metadata.moe/graph/ageRestricted15>
+FROM <http://isdn.metadata.moe/graph/ageRestricted18>
 {
   ?s schema:genre [
     a isdn:ComiketGenre ;
@@ -116,8 +116,8 @@ PREFIX schema: <http://schema.org/>
 
 SELECT ?comicketGenreName ?ratingGender ?ratingAge (COUNT(*) AS ?count)
 FROM <urn:x-arq:DefaultGraph>
-FROM <http://metadata.moe/isdn/graph/ageRestricted15>
-FROM <http://metadata.moe/isdn/graph/ageRestricted18>
+FROM <http://isdn.metadata.moe/graph/ageRestricted15>
+FROM <http://isdn.metadata.moe/graph/ageRestricted18>
 WHERE {
   ?work schema:genre [
           a isdn:ComiketGenre ;
@@ -136,8 +136,8 @@ PREFIX schema: <http://schema.org/>
 
 SELECT ?category (COUNT(DISTINCT ?s) AS ?count)
 FROM <urn:x-arq:DefaultGraph>
-FROM <http://metadata.moe/isdn/graph/ageRestricted15>
-FROM <http://metadata.moe/isdn/graph/ageRestricted18>
+FROM <http://isdn.metadata.moe/graph/ageRestricted15>
+FROM <http://isdn.metadata.moe/graph/ageRestricted18>
 {
   ?s schema:category ?category
 }
@@ -150,8 +150,8 @@ ORDER BY DESC(?count)
 年齢制限のあるコンテンツに関しては、グラフURIを分けています。
 
 - デフォルトグラフ : 一般
-- `http://metadata.moe/isdn/graph/ageRestricted15` : 15禁
-- `http://metadata.moe/isdn/graph/ageRestricted18` : 18禁
+- `http://isdn.metadata.moe/graph/ageRestricted15` : 15禁
+- `http://isdn.metadata.moe/graph/ageRestricted18` : 18禁
 
 ## 語彙・制約記述
 
